@@ -1,4 +1,4 @@
-#summary Logo for our smartAlloc Project.
+#summary Logo for smartAlloc.
 
 == Logo Created ==
 
