@@ -1,4 +1,4 @@
-#summary Logo for smartAlloc.
+#summary Logo for smarTAlloc.
 
 == Logo Created ==
 
