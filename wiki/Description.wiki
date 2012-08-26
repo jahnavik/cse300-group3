@@ -1,4 +1,4 @@
-*smarTAlloc!*
+#summary Introduction to *smarTAlloc!*
 
 == Introduction ==
 
