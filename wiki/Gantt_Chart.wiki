@@ -1,4 +1,4 @@
-#summary Gantt Chart for first two weeks.
+#summary Gantt Chart for first two weeks (27th August 2012 - 10th September 2012).
 
 == Gantt Chart ==
 
