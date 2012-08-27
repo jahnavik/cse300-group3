@@ -5,4 +5,4 @@
 The gantt chart for the first 2 weeks has been uploaded in the _*Downloads*_ section. It'll be updated as we move on with the project.
 
 
-*Link* :
+*Link* : http://code.google.com/p/cse300-group3/downloads/list
