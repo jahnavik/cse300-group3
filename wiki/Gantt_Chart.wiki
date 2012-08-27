@@ -1,0 +1,8 @@
+#summary Gantt Chart for first two weeks.
+
+== Introduction ==
+
+The gantt chart for the first 2 weeks has been uploaded on the _*Downloads*_ section. It'll be updated as we move on with the project. 
+
+
+*Link* :
