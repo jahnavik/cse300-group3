@@ -1,4 +1,4 @@
-#Work allotted to group members
+#summary Work allotted to group members
 
 == Work Allotment ==
 
