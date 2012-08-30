@@ -4,4 +4,4 @@
 
 The process map for _smarTAlloc!_ has been uploaded in the _*Downloads*_ section. It provides the overview of our project.
 
-*Link* : http://code.google.com/p/cse300-group3/downloads/list
+*Link* : http://code.google.com/p/cse300-group3/downloads/detail?name=Business_Process_Map_Group_3.pptx&can=2&q=
