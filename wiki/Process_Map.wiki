@@ -1,0 +1,7 @@
+#summary Process Map for smarTAlloc!
+
+= Process Map =
+
+The process map for _smarTAlloc!_ has been uploaded in the _*Downloads*_ section. It provides the overview of our project.
+
+*Link* : http://code.google.com/p/cse300-group3/downloads/list
