@@ -1,4 +1,5 @@
 #summary Meeting with the TA Allocation Coordinators done.
+#labels Phase-Requirements,DicussionwithAdmin,Adminexpectations
 
 = Introduction =
 
@@ -20,4 +21,5 @@ We received inputs about the following during the Meeting:
 
 4. Key Advices.   
 
-All this Information was noted down during the meeting and has now been compiled for our Use.
+All this Information was noted down during the meeting and has now been compiled for our Use. 
+It has been shared with other Team members too.
