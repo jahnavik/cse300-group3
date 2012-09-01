@@ -1,14 +1,14 @@
-Meeting with the TA Allocation Coordinators done.
+#summary Meeting with the TA Allocation Coordinators done.
 
 = Introduction =
 
-Yesterday the Task of Meeting the TA Allocation Coordinators was completed  which makes the Tasks T1 and T2 100% complete, some key details of which are as compiled below:
+The Task of _Meeting the TA Allocation Coordinators_ was completed yesterday which makes the Tasks T1 and T2 100% complete, some key details of which are as compiled below:
 
 
 
-= Details =
+== Details ==
 
-We Introduced to Dr. Astrid Kiehn and Dr. Vikram Goyal(TA Allocation Coordinators), our Project Problem and the proposed solution and how it aims to benefit them. 
+We introduced to Dr. Astrid Kiehn and Dr. Vikram Goyal(TA Allocation Coordinators), our Project Problem and the proposed solution and how it aims to benefit them. 
 
 We received inputs about the following during the Meeting:
 
@@ -18,6 +18,6 @@ We received inputs about the following during the Meeting:
 
 3. View about the Solution proposed by us and Expectations from our product.
 
-4. Key Advices :)    
+4. Key Advices.   
 
 All this Information was noted down during the meeting and has now been compiled for our Use.
