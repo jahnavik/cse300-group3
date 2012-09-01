@@ -1,5 +1,5 @@
 #summary Meeting with the TA Allocation Coordinators done.
-#labels Phase-Requirements,DicussionwithAdmin,Adminexpectations
+#labels Phase-Requirements,Dicussion-with-Admin,Admin-expectations,Dr.Astrid,Dr.Vikram
 
 = Introduction =
 
