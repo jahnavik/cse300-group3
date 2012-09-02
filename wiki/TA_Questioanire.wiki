@@ -1,0 +1,13 @@
+#summary Questionaire_for_the_TAs
+#labels Phase-QA,TA_Questionaire
+
+= Introduction =
+Questionaire for the TAs Survey prepared. 
+
+
+= Details =
+Questionaire for Survey of the TAs has been prepared and is available in the downloads section of our Project.
+
+Now the identified TAs will be surveyed with this questionaire either through mail or in person.
+
+Based on their inputs as well a the inputs of the Coordinators,we will build the the technicalities. 
