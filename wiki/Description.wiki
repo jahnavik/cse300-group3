@@ -1,5 +1,5 @@
 #summary Introduction to *smarTAlloc!*
-#labels Phase-Requirements,Project-Overview
+#labels Phase-Requirements,Project-Overview,Featured
 
 == Introduction ==
 
