@@ -1,7 +1,7 @@
 #summary Meeting with TA Coordinators - Dr. Astrid Keihn, Dr. Vikram Goyal.
 #labels Phase-Requirements
 
-= Introduction =
+== Introduction ==
 
 The Task of Meeting with the TA Allocation Coordinators was completed on 30 August. We have shared all the details here.  
 
