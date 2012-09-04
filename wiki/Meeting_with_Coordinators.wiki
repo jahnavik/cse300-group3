@@ -13,7 +13,7 @@ We received inputs about the following during the Meeting:
 
 1. Problems faced by them while Coordinating the entire Process.
 
-2.Actual method being followed currently such as information about deciding the no. of TAs for a course, eligibility criteria, preferences given and Tools used to coordinate amongst the applicants, instructors and themselves.
+2. Actual method being followed currently such as information about deciding the no. of TAs for a course, eligibility criteria, preferences given and Tools used to coordinate amongst the applicants, instructors and themselves.
 
 3. View about the solution proposed by us and expectations from our product.
 
