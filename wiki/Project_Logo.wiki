@@ -4,4 +4,4 @@
 
 Logo for our project has been created. _Suggestions_ are still welcome for the logo. We can change it as we move on with our software since we are just getting started. 
 
-<img http://code.google.com/p/cse300-group3/downloads/detail?name=Project%20Logo.PNG&can=2&q="Project Logo!"/>
+[ http://code.google.com/p/cse300-group3/downloads/detail?name=Project%20Logo.PNG&can=2&q= Project Logo!]
