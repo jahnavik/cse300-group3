@@ -1,0 +1,13 @@
+#summary Survey for the TAs
+
+= Introduction =
+
+B.Tech,M.Tech,PhD TAs were identified by us and interviewed personally by Prachi and Adesh and were made to fill the *survey*-   
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
