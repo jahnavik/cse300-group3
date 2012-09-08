@@ -1,8 +1,0 @@
-#summary Survey for the TAs
-
-
-
-B.Tech,M.Tech,PhD TAs were identified by us and interviewed personally by Prachi and Adesh and were made to fill the *survey*- *http://code.google.com/p/cse300-group3/downloads/detail?name=TA%20Questionaire.pdf&can=2&q=#makechanges  
-
-
-The responses filled in by the TAs have been recorded in an Excel sheet for our records and use.
