@@ -5,7 +5,7 @@
 The gantt chart for the first 2 weeks has been uploaded in the _*Downloads*_ section. It'll be updated as we move on with the project.
 
 
-*Link 1* : Click [http://code.google.com/p/cse300-group3/downloads/detail?name=Gantt%20Chart%20-%20Gp%203.xlsx&can=2&q=  Here] for the shared document.
+*Link 1* : Click [http://code.google.com/p/cse300-group3/downloads/detail?name=Gantt%20Chart%20-%20Gp%203.xlsx&can=2&q=  Here] for the Excel File.
 
 *Link 2* : Click [http://cse300-group3.googlecode.com/files/Gantt%20Chart%20-%20Gp%203%20%28Part%201%29.jpg Here] for the jpeg format. 
 
