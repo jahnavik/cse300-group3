@@ -1,4 +1,6 @@
 #labels Featured,Phase-Requirements
-#BPM for *smarTAlloc!*.
+#BPM for *smarTAlloc!*
+
+Final Version of our Business Process Model. 
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/Business%20Process%20Model.jpg] 
