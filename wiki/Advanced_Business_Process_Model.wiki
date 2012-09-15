@@ -1,5 +1,5 @@
+#summary BPM for *smarTAlloc!*
 #labels Featured,Phase-Requirements
-#BPM for *smarTAlloc!*
 
 Final Version of our Business Process Model. 
 
