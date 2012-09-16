@@ -1,11 +1,7 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
+#summary Responses from TAs.
 
 
-= Details =
+== Details ==
 
 We have compiled all the responses we got from surveying Teaching Assistants at IIIT-Delhi.
 
