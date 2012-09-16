@@ -1,8 +1,8 @@
-#summary Responses from TAs.
+#summary Responses of survey conducted for TAs.
 
-
+ 
 == Details ==
 
-We have compiled all the responses we got from surveying Teaching Assistants at IIIT-Delhi.
+We have compiled all the responses we got from surveying Teaching Assistants at IIIT-Delhi. 
 
 Please refer to the [http://cse300-group3.googlecode.com/files/Responses%20Of%20TA%20Survey.pdf link] for all its details. 
