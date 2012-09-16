@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+We have compiled all the responses we got from surveying Teaching Assistants at IIIT-Delhi.
+
+Please refer to the [http://cse300-group3.googlecode.com/files/Responses%20Of%20TA%20Survey.pdf link] for all its details. 
