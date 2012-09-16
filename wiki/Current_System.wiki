@@ -1,3 +1,4 @@
+#summary Current Model of TA Allocation at IIIT-Delhi
 
 == Details ==
 
