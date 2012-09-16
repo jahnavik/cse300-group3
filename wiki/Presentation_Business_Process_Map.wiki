@@ -1,8 +1,6 @@
 #summary Presentation for the Business Process Map.
 #labels Phase-Implementation
 
-= Introduction =
-
-Add your content here.
+== Introduction ==
 
 Click [http://code.google.com/p/cse300-group3/downloads/detail?name=smarTAlloc%21%20-%20BPM.pez&can=2&q= here] to view the Presentation.
