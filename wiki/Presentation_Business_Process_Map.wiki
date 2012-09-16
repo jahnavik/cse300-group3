@@ -1,5 +1,5 @@
 #summary Presentation for the Business Process Map.
-#labels Phase-Implementation
+#labels Phase-Implementation,Featured
 
 == Introduction ==
 
