@@ -4,3 +4,5 @@
 Final Version of our Business Process Model. 
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/Advanced%20Business%20Process%20Model.jpg] 
+
+Please refer to this [http://cse300-group3.googlecode.com/files/Advanced%20Business%20Process%20Model.jpg link] for the full scale image.
