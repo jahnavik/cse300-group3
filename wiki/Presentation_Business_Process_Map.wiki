@@ -3,4 +3,8 @@
 
 == Introduction ==
 
+
+
+== Details ==
+
 Click [http://code.google.com/p/cse300-group3/downloads/detail?name=smarTAlloc%21%20-%20BPM.pez&can=2&q= here] to view the Presentation.
