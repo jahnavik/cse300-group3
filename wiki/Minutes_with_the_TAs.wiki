@@ -1,2 +1,4 @@
+#summary Details about our meetings with the identified TAs are compiled by us.
 #labels specifying_end-user_requirements
-Details about our meetings with the identified TAs are compiled in this document available at ://code.google.com/p/cse300-group3/downloads/detail?name=Minutes%20with%20the%20TAs.pdf&can=2&q=#makechanges*
+
+Please refer to [http://code.google.com/p/cse300-group3/downloads/detail?name=Minutes%20with%20the%20TAs.pdf&can=2&q=#makechanges link] for the document.
