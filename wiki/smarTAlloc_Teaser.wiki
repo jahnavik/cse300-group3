@@ -1,0 +1,8 @@
+#summary Final teaser video for smarTAlloc
+#labels Featured,Phase-Requirements
+
+== Details  ==
+
+We have updated our teaser video for smarTAlloc and is now publicly available for everyone. 
+
+Please visit the [http://www.youtube.com/watch?v=XcmHoPGqz8k&feature=plcp link] for the video. 
