@@ -6,3 +6,5 @@
 We have updated our teaser video for smarTAlloc and is now publicly available for everyone. 
 
 Please visit the [http://www.youtube.com/watch?v=XcmHoPGqz8k&feature=plcp link] for the video.
+
+You can also download the final teaser from [http://cse300-group3.googlecode.com/files/smarTAlloc%21%20-%20Teaser.mp4 here].
