@@ -4,6 +4,6 @@
  
 == Details ==
 
-We have compiled all the responses we got from the online survey of Teaching Assistants at IIIT-Delhi. 
+An online survey was conducted for the Teaching Assistants with whom we weren't able to meet-up personally. We have compiled all the responses obtained from the online survey of Teaching Assistants at IIIT-Delhi. 
 
 Please refer to the [http://cse300-group3.googlecode.com/files/Responses%20Of%20TA%20Survey.pdf link] for all the  details. 
