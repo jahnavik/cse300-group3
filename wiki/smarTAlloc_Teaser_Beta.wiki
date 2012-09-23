@@ -3,6 +3,6 @@
 
 == Introduction  ==
 
-This is teaser video for - *smarTAlloc!*. It's currently in the beta stage and we are working on it. We'll be uploading the FINAL version soon.
+We have created a teaser video for - *smarTAlloc!*. It's currently in the beta stage and we are working on it. We'll be uploading the FINAL version soon.
 
 Please visit the [http://www.youtube.com/watch?v=RxY_kfAZ_G4&feature=plcp link] for the video.
