@@ -1,4 +1,4 @@
 #labels Phase-Requirements
-Updated information (for both System and UI design) obtained during the meeting with TAs
+#Updated information (for both System and UI design) obtained during the meeting with TAs
 
 Please click on the [http://cse300-group3.googlecode.com/files/Minutes%20of%20Meeting%20with%20the%20TAs.pdf link] for the pdf file.
