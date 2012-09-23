@@ -1,4 +1,4 @@
-#summary Gantt Chart for next two weeks (11th September 2012 - 24th September 2012).
+#summary Gantt Chart for next three weeks (11th September 2012 - 1st October 2012).
 
 Please refer to the given link for the Gantt Chart. It will be updated as we move on with the project.
 
