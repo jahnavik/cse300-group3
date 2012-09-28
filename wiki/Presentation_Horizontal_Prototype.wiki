@@ -1,4 +1,4 @@
-#summary Presentation for the Business Process Map.
+#summary Presentation for the horizontal Prototype.
 
 == Introduction ==
 
