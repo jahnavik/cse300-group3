@@ -9,6 +9,6 @@ Please refer this [http://cse300-group3.googlecode.com/files/ER%20Model.JPG link
 [http://code.google.com http://cse300-group3.googlecode.com/files/ER%20Model.JPG]
 ----
 
-== Version 1.1 ==
+== _Version 1.1_ ==
 
 Coming soon...
