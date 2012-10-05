@@ -5,4 +5,4 @@
 
 Click [http://code.google.com/p/cse300-group3/downloads/detail?name=smarTAlloc%21%20-%20HP.pez&can=2&q= here] to view the Presentation.
 
-[ http://code.google.com/ http://cse300-group3.googlecode.com/files/Presentation_Horizontal_Prototype.jpg]
+[http://code.google.com/ http://cse300-group3.googlecode.com/files/Presentation_Horizontal_Prototype.jpg]
