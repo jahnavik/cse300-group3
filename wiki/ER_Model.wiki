@@ -1,7 +1,14 @@
 #summary Entity Relationship Diagram for smarTAlloc!
 
-== Version 1 ==
-----
+== Version 1.0 ==
 
 The basic ER Model for smarTAlloc is ready! 
 Please refer this [http://cse300-group3.googlecode.com/files/ER%20Model.JPG link] for the model. 
+
+
+[http://code.google.com http://cse300-group3.googlecode.com/files/ER%20Model.JPG]
+----
+
+== Version 1.1 ==
+
+Coming soon...
