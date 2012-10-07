@@ -21,7 +21,7 @@ Documenting the internal design of software for the purpose of future maintenanc
 
 Click [http://cse300-group3.googlecode.com/files/Detailed%20Description.pdf here] to view the detailed description of the Business Process Model for our Project.
 
-== Tools ==
+=== Tools ===
 
 1. Website Screenshots : [http://www.wix.com/ Wix]
 
