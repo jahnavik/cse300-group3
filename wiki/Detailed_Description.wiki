@@ -23,7 +23,7 @@ Click [http://cse300-group3.googlecode.com/files/Detailed%20Description.pdf here
 
 === Tools ===
 
-1. Website Screenshots : [http://www.wix.com/ Wix]
+The Website Screenshots were taken from the Horizontal Prototype - created using [http://www.wix.com/ Wix].
 
 == References ==
 
