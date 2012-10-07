@@ -1,8 +1,22 @@
 #summary Presentation for the Business Process Map.
 #labels Phase-Implementation,Featured
 
-== Details ==
+== Introduction ==
+
+The Business Process Map was the first deliverable. It refers to activities involved in defining exactly what a business entity does, who is responsible, designing new procedures, to what standard a process should be completed.
+
+All Inputs obtained during the presentation have been compiled and will be put to use for the remaining deliverables as well.
+
+== Presentation ==
 
 Click [http://cse300-group3.googlecode.com/files/smarTAlloc%21%20-%20BPM.pez here] to view the Presentation.
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/Presentation_BPM.jpg]
+
+== Tools ==
+
+1. Presentation : [http://prezi.com/ Prezi]
+
+2. Business Process Map : [http://visio.microsoft.com/en-us/pages/default.aspx Microsoft Visio]
+
+3. Survey : [http://www.surveymonkey.com/ Survey Monkey]
