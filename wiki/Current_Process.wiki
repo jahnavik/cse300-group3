@@ -1,3 +1,5 @@
+#summary Summary of Current TA Allocation Process deployed at IIIT-D
+
 == Introduction ==
 
 The system currently deployed is manual and is very tedious for all the end-users.
