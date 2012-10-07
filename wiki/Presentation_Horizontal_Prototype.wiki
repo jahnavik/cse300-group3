@@ -1,8 +1,26 @@
 #summary Presentation for the Horizontal Prototype.
 
 
-== Details ==
+== Introduction ==
+
+The Horizontal Prototype was the second deliverable. A common term for a user interface prototype is the horizontal prototype. It provides a broad view of an entire system or subsystem, focusing on user interaction more than low-level system functionality, such as database access. It is useful for confirmation of user interface requirements and system scope. It is a demonstration version of the system to obtain buy-in from the business.
+
+All Inputs obtained during the presentation have been compiled and will be put to use for the remaining deliverables as well.
+
+== Presentation ==
 
 Click [http://cse300-group3.googlecode.com/files/smarTAlloc%21%20-%20HP.pez here] to view the Presentation.
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/Presentation_Horizontal_Prototype.jpg]
+
+== Tools ==
+
+1. Presentation : [http://prezi.com/ Prezi]
+
+2. Horizontal Prototype : [http://www.wix.com/ Wix]
+
+3. Survey : [http://www.surveymonkey.com/ Survey Monkey]
+
+4. Video : [http://www.techsmith.com/camtasia.html Camtasia]
+
+5. Teaser Video : [http://www.powtoon.com/ PowToon]
