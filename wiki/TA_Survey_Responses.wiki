@@ -9,3 +9,7 @@ An online survey was conducted for the Teaching Assistants with whom we weren't 
 Please refer to the [http://cse300-group3.googlecode.com/files/Responses%20Of%20TA%20Survey.pdf link] for all the  details. 
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/TA%20Survey.png]
+
+Tools:
+
+All the results were compiled in Microsoft Excel. 
