@@ -1,0 +1,16 @@
+#summary Enhanced Entity Relationship Diagram for smarTAlloc!
+
+== _Version 1.0_ ==
+
+The basic *EER Model* for smarTAlloc is ready! It is a high level data model which incorporates extensions to our original *ER Model*.
+It helps us to visualize the backend for our website - _smartalloc!_ more clearly and reflects the properties and constraints of the database. 
+
+Click [http://cse300-group3.googlecode.com/files/EER%20Model.JPG here] for the jpg image of the model. 
+
+
+[http://code.google.com http://cse300-group3.googlecode.com/files/EER%20Model.JPG]
+----
+
+== _Version 1.1_ ==
+
+Coming soon...
