@@ -13,7 +13,7 @@ A software development process, also known as a software development life-cycle,
 [http://upload.wikimedia.org/wikipedia/commons/5/51/Waterfall_model.png]
 
 
-= Documenting =
+== Documenting ==
 
 Documenting the internal design of software for the purpose of future maintenance and enhancement is done throughout development. The software engineering process chosen by the developing team will determine how much internal documentation (if any) is necessary. Plan-driven models generally produce more documentation than Agile models.
 
