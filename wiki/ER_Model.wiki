@@ -2,8 +2,9 @@
 
 == _Version 1.0_ ==
 
-The basic ER Model for smarTAlloc is ready! 
-Please refer this [http://cse300-group3.googlecode.com/files/ER%20Model.JPG link] for the model. 
+The basic *ER Model* for smarTAlloc! is ready! The entity-relationship model describes the database used in _smartalloc!_ with all the entities, attributes, relationships, cardinalities used in the relational database. 
+
+Click [http://cse300-group3.googlecode.com/files/ER%20Model.JPG here] for jpg image of the model. 
 
 
 [http://code.google.com http://cse300-group3.googlecode.com/files/ER%20Model.JPG]
@@ -12,3 +13,9 @@ Please refer this [http://cse300-group3.googlecode.com/files/ER%20Model.JPG link
 == _Version 1.1_ ==
 
 Coming soon...
+
+== References ==
+
+1. http://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
+
+2. http://www.sis.pitt.edu/~valeriab/1022-spring08/Chapter6.pdf
