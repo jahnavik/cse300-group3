@@ -1,10 +1,7 @@
 #summary Enhanced Entity Relationship Diagram for smarTAlloc!
 
+
 == Enhanced Entity-Relationship Model ==
-
-The Enhanced Entity–Relationship (EER) model is a high-level or conceptual data model incorporating extensions to the original entity–relationship (ER) model, used in the design of databases. It was developed to reflect more precisely the properties and constraints that are found in more complex databases.
-
-== Enhanced Entity-Relationship Diagram ==
 
 === _Version 1.0_ ===
 
