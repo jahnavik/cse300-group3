@@ -24,7 +24,7 @@ Coming soon...
 
 == Tools ==
 
-The EER Diagram was created in MySQL. It is an extension to the original database created.
+The EER Diagram was created in [http://www.mysql.com/ MySQL]. It is an extension to the original database created.
 
 == References ==
 
