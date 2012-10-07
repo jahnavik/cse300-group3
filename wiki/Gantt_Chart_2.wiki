@@ -12,5 +12,9 @@ Please refer to the given link for the Gantt Chart for our Project. It will be u
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/Gantt%20Chart%20-%20Gp%203%20%28Part%202%29.jpg ]
 
+==Tools==
+
+The Gantt Chart was made using Microsoft Excel and Microsft Visio.
+
 ==References==
 http://en.wikipedia.org/wiki/Gantt_chart
