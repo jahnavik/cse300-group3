@@ -5,7 +5,7 @@
 
 The *Horizontal Prototype* was the second deliverable. A common term for a user interface prototype is the horizontal prototype. It provides a broad view of an entire system or subsystem, focusing on user interaction more than low-level system functionality, such as database access. It is useful for confirmation of user interface requirements and system scope. It is a demonstration version of the system to obtain buy-in from the business.
 
-All Inputs obtained during the presentation have been compiled and will be put to use for the remaining deliverables as well.
+All inputs obtained during the presentation have been compiled and will be put to use for the remaining deliverables as well.
 
 == Presentation ==
 
