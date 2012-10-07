@@ -19,12 +19,15 @@ There are three main types of process models:
 It refers to activities involved in defining exactly what a business entity does, who is responsible, designing new procedures, to what standard a process should be completed, and how the success of a business process can be determined. 
 
 
-==Final Version of the Business Process Map for smarTAlloc!== 
+==Business Process Map for smarTAlloc!== 
 
 Please refer to this [http://cse300-group3.googlecode.com/files/Advanced%20Business%20Process%20Model.jpg link] for the Business Process Map.
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/Advanced%20Business%20Process%20Model.jpg] 
 
+==Tools==
+
+The business process map for our project was created using [http://visio.microsoft.com/en-us/pages/default.aspx Microsoft Visio].
 
 ==References==
 
