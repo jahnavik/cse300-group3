@@ -3,7 +3,7 @@
 
 == Introduction ==
 
-The Business Process Map was the first deliverable. It refers to activities involved in defining exactly what a business entity does, who is responsible, designing new procedures, to what standard a process should be completed.
+The *Business Process Model* was the first deliverable. It refers to activities involved in defining exactly what a business entity does, who is responsible, designing new procedures, to what standard a process should be completed.
 
 All Inputs obtained during the presentation have been compiled and will be put to use for the remaining deliverables as well.
 
