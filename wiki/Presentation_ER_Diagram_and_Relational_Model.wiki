@@ -14,7 +14,7 @@ All Inputs obtained during the presentation have been compiled and will be put t
 
 Click [http://cse300-group3.googlecode.com/files/smarTAlloc%21%20-%20ER.pez here] to view the Presentation.
 
-[http://cse300-group3.googlecode.com/files/ER_Diagram_Presentation.png]
+[http://cse300-group3.googlecode.com/files/ER_Diagram_Presentation.PNG]
 
 == Tools ==
 
