@@ -10,6 +10,5 @@ Please refer to the [http://cse300-group3.googlecode.com/files/Responses%20Of%20
 
 [http://code.google.com/ http://cse300-group3.googlecode.com/files/TA%20Survey.png]
 
-Tools:
-
+== Tools ==
 All the results were compiled in Microsoft Excel. 
