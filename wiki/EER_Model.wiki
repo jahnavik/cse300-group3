@@ -1,8 +1,14 @@
 #summary Enhanced Entity Relationship Diagram for smarTAlloc!
 
-== _Version 1.0_ ==
+== Enhanced Entity-Relationship Model ==
 
-The basic *EER Model* for smarTAlloc is ready! It is a high level data model which incorporates extensions to our original *ER Model*.
+The Enhanced Entity–Relationship (EER) model is a high-level or conceptual data model incorporating extensions to the original entity–relationship (ER) model, used in the design of databases. It was developed to reflect more precisely the properties and constraints that are found in more complex databases.
+
+== Enhanced Entity-Relationship Diagram ==
+
+=== _Version 1.0_ ===
+
+The basic *EER Diagram* for smarTAlloc is ready! It is a high level data model which incorporates extensions to our original *ER Model*.
 It helps us to visualize the backend for our website - _smartalloc!_ more clearly and reflects the properties and constraints of the database. 
 
 Click [http://cse300-group3.googlecode.com/files/EER%20Model.JPG here] for the jpg image of the model. 
@@ -11,9 +17,14 @@ Click [http://cse300-group3.googlecode.com/files/EER%20Model.JPG here] for the j
 [http://code.google.com http://cse300-group3.googlecode.com/files/EER%20Model.JPG]
 ----
 
-== _Version 1.1_ ==
+=== _Version 1.1_ ===
 
 Coming soon...
+
+
+== Tools ==
+
+The EER Diagram was created in MySQL. It is an extension to the original database created.
 
 == References ==
 
