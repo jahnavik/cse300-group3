@@ -1,4 +1,4 @@
-#summary Presentation for the horizontal Prototype.
+#summary Presentation for the Horizontal Prototype.
 
 
 == Details ==
