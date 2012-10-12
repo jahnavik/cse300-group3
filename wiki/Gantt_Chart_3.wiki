@@ -1,4 +1,4 @@
-#summary Gantt Chart for next three weeks (8th October 2012 - 22nd October 2012).
+#summary Gantt Chart for next two weeks (8th October 2012 - 22nd October 2012).
 
 == Gantt Chart  ==
 
