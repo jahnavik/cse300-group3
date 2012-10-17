@@ -3,11 +3,14 @@ session_start();
 
 include "connect1.php";
 
-
-if ($_POST["submit"])
+if (isset($_POST["submit"]))
 {
-	if ($_SESSION["name"])
+
+	
+	if (isset($_SESSION["name"]))
 	{
+		
+		
 		$name = $_FILES["file"]["name"];
 		$type = $_FILES["file"]["type"];
 		$size = $_FILES["file"]["size"];
@@ -31,6 +34,9 @@ if ($_POST["submit"])
 				$user = $_SESSION["name"];
 				$sqlcode = mysql_query("INSERT INTO upload (id,user,location) VALUES ('','$user','$location')");
 				echo "<a href='$location'>Click here to view the file.</a>";
+				
+				//header("location:read_ta.php?file='$name'");
+
 			}
 		}
 	}
@@ -38,7 +44,7 @@ if ($_POST["submit"])
 	{
 		echo "Please Sign In";
 	}
-}
+	}
 else
 {
 	echo "<a href='index.php'>";
