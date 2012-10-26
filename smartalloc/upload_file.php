@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include "connect1.php";
+include "connect.php";
 
 if (isset($_POST["submit"]))
 {
@@ -33,8 +33,8 @@ if (isset($_POST["submit"]))
 				move_uploaded_file($tmp_name,$location);
 				$user = $_SESSION["name"];
 				$sqlcode = mysql_query("INSERT INTO upload (id,user,location) VALUES ('','$user','$location')");
-				echo "<a href='$location'>Click here to view the file.</a>";
-				
+				//echo "<a href='$location'>Click here to view the file.</a>";
+				header("location:am_teachingassistants.php");
 				//header("location:read_ta.php?file='$name'");
 
 			}
