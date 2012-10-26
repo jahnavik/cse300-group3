@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Home</title>
@@ -19,16 +19,17 @@
 
 <div id="container">  
     <ul id="nav">  
-        <li><a href="am_home.html">Home</a></li>  
-        <li><a href="am_teachingassistants.php">Teaching Assistants</a></li>  
-        <li><a href="am_courseinfo.php">Course Info</a></li>  
-        <li><a href="am_timetable.php">Time Table</a></li>  
+        <li class="active"><a href="am_home.html" title="Your dashboard">Home</a></li>  
+        <li><a href="am_teachingassistants.php" title="More info on TAs">Teaching Assistants</a></li>  
+        <li><a href="am_courseinfo.php" title="More info on courses">Course Info</a></li>  
+        <li><a href="am_timetable.php" title="Semester Timetable">Time Table</a></li>  
         
     </ul>  
 </div>  
 
 
 <div id = "content_wrap">
+ <a style="margin-left:90px;font-size:16px;" href="logout.php" title="Really wanna leave? Click here.">Sign Out</a>
 
 <div id="left_content">
   <div id="wrapper">
@@ -49,15 +50,22 @@
 
 
 <div id="right_content">
+		
+       
 		<p style="color:black;margin-top:110px;margin-left:10px;font-size:40px;text-align:center;">Welcome!</p>
 		<p style="color:blue;margin-top:20px;margin-left:10px;font-size:40px;text-align:center;">Mr. Vivek Tiwari</p>
-		<p></br></br>
+		<p style="line-height: 1; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;"></br></br>
 			The <b>Teaching Assistant</b> and the <b>Course Info</b> tab has been given for you to upload the list of TAs and the courses available in the current semester.
 		</p>	
 	</div>
-</div>
+    
 </div>
 
+</div>
+
+
+<div id="footer">
+	<img  src="images/contactbanner.png" /></div>
 
 <script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>

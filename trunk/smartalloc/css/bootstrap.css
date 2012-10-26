@@ -65,7 +65,7 @@ sup {
 sub {
   bottom: -0.25em;
 }
-
+/*
 img {
   width: auto\9;
   height: auto;
@@ -78,7 +78,7 @@ img {
 #map_canvas img {
   max-width: none;
 }
-
+*/
 button,
 input,
 select,
@@ -4954,6 +4954,7 @@ input[type="submit"].btn.btn-mini {
   margin-bottom: 0;
 }
 
+
 .modal-footer {
   padding: 14px 15px 15px;
   margin-bottom: 0;
@@ -4979,6 +4980,7 @@ input[type="submit"].btn.btn-mini {
 .modal-footer:after {
   clear: both;
 }
+
 
 .modal-footer .btn + .btn {
   margin-bottom: 0;

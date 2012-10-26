@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'reader.php';
-include "connect1.php";
+include "connect.php";
 
 
 $filename='ta_list.xls';

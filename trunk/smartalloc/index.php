@@ -6,8 +6,8 @@ $err=$_GET['err'];
 }
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,30 +51,35 @@ $err=$_GET['err'];
 
 			<form id="hm" action="login.php" method="post">
 			<label>Username:</label>
-			<input id="email" name="email" type="text"> <br/>
+			<input id="email" name="email" type="text" title="Enter your email address here"/> <br/>
 			<label>Password:</label>
-			<input id="pass" name="password"  type="password"/>
+			<input id="pass" name="password"  type="password" title="Enter password here"/>
 			<input id="check" type="checkbox" name="vehicle" value="staysigned">
 			<label id="stay" >Stay signed in</label>
 			<button id="submit" type="submit"  >Sign in</button>
-              <?
-				if ($err==1)
-				{
-					echo "Wrong username/pasword!!";
-				}
-			?>
+              
 			</form>
 
 			<div id=tp>
-				<div align="center"> <a href="http://www.mail.iiitd.ac.in/" style="text-decoration:underline; font-weight:normal;color:#0063DC; font-size:13px; " >Can't access your account?</a> </div>
+				<div align="center"> <a href="loginacess.html" style="text-decoration:underline; font-weight:normal;color:#0063DC; font-size:13px; " >Can't access your account?</a> </div>
 			</div>
+            
+            <?
+				if ($err==1)
+				{
+					echo '<p id="invalid"  summary="datapass"></p>';
+					echo "Invalid username/password. Try Again!";
+				}
+			?>
 		</div>
     
         </div>
 	</div>
 
 
-
+<div id="footer"><img  src="images/contactbanner.png" /></div>
+	
+    	
 <script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
     <script type="text/javascript">
@@ -91,8 +96,9 @@ $err=$_GET['err'];
 //@diti session_start();
 if (isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
     
+
    // $_SESSION['email']=$_COOKIE['email'];
-        header('Location: homepage.html');
+        header('Location: am_home.html');
     }
     
 

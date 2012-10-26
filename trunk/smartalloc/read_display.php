@@ -42,6 +42,7 @@ $i=0;
         echo "</td><td>"; 
 		echo $row['contact'];
         echo "</td></tr>"; 
+		
     } 
 
     echo "</tbody></table>";

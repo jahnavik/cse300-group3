@@ -10,10 +10,17 @@
 	margin-right:auto;
 }
 
+#footer{
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
 
 #content_wrap {
 	
-	height:600px;
+	height:500px;
 	width:1342px;
 	margin-left:auto;
 	margin-right:auto;
@@ -22,10 +29,23 @@
 
 #left_content{
 	
-	height:600px;
+	height:500px;
 	width:700px;
 	float:left;
 	margin-left:190px;
+}
+
+
+#right_content{
+	
+	height:500px;
+	width:320px;
+	float:right;
+	margin-right:130px;
+	margin-left:0px;
+	margin-top:30px;
+	
+
 }
 
 #hm
@@ -195,24 +215,13 @@ a:hover, a:active {
 
 .slider-wrapper { 
 	width: 80%; 
-	margin: 40px -40px;
+	margin: 30px -40px;
 }
 
 .clear {
 	clear:both;
 }
 
-#right_content{
-	
-	height:600px;
-	width:320px;
-	float:right;
-	margin-right:130px;
-	margin-left:0px;
-	margin-top:37px;
-	
-
-}
 
 .boxed {
 	height:400px;
@@ -226,4 +235,10 @@ a:hover, a:active {
 	margin-top:10px;
 	text-align:center;
 	  
+}
+
+
+#invalid {
+		float:right;
+		margin-left:10px;
 }
