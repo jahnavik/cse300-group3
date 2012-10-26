@@ -1,15 +1,13 @@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Teaching Assitants List</title>
-<link rel="stylesheet" href="css/stylelist.css" type="text/css" media="screen" />
-         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="css/stylelist.css" type="text/css" media="screen" />
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Oswald' type='text/css' />
         <link rel="stylesheet" href="cus-icons.css" type="text/css"  />
     	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"  />
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>       
+ 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>       
 </head>
 
 
@@ -18,8 +16,8 @@
 
 <div id="container">  
     <ul id="nav">  
-        <li ><a href="am_home.html">Home</a></li>  
-        <li ><a href="am_teachingassistants.php">Teaching Assistants</a></li>  
+        <li><a href="am_home.html">Home</a></li>  
+        <li class="active"><a href="am_teachingassistants.php">Teaching Assistants</a></li>  
         <li><a href="am_courseinfo.php">Course Info</a></li>  
         <li><a href="am_timetable.php">Time Table</a></li>  
         
@@ -27,31 +25,48 @@
 </div>  
 
 
-<div id = "content_wrap">    
- 
-<form class="form-search">
-  <div class="input-append">
-    <input type="text" class="span2 search-query">
-    <button type="submit" class="btn"><i class="cus-zoom"></i>   Search</button>
-  </div>
-  <div class="input-prepend">
-    <button type="submit" class="btn"><i class="cus-zoom"></i>   Search</button>
-    <input type="text" class="span2 search-query" placeholder="Enter here...">
-  </div>
+<div id = "content_wrap">   
+ <a style="margin-left:155px; font-size:16px; text-decoration:underline;" href="logout.php">Sign Out</a> 
+
+<div id="middle_content">
+	<style>
+#search {
+	
+	float:right;
+}
+
+#search input[type="text"] {
+    background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: normal 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 130px;
+	height: 15px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+    }
+
+#search input[type="text"]:focus {
+    width: 130px;
+    }
+</style>
+<form method="get" action="/search" id="search">
+  <input name="q" type="text" size="40" placeholder="Search...." />
 </form>
-
+<button class="btn" type="submit"  id="save" ><i class="cus-add"></i>   Add Record</button>
 <?php include("read_display.php"); ?>
-<button class="btn" type="submit"  id="save" ><i class="cus-add"></i>   Add</button>
-<button class="btn" type="submit"  id="save" ><i class="cus-page-edit"></i>   Edit</button>
-<button class="btn" type="submit"  id="save" ><i class="cus-table-save"></i>   Save</button>
-<button class="btn" type="submit"  id="save" ><i class="cus-cross"></i>   Delete</button>
-
-
-
+	</div>
 </div>
+<div id="footer"><img  src="images/contactbanner.png" /></div>
 <script src="js/bootstrap.js"></script>
 </body>
 </html>
-
-
-

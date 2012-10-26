@@ -1,5 +1,5 @@
 <?php
-include "connect1.php";
+include "connect.php";
 //require_once 'file:///C|/Users/Jahnavi/Downloads/excelsheet_reader/PEAR.php';
 require_once 'C:\xampp\htdocs\excelsheet_reader\oleread.inc';
 

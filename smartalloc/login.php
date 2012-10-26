@@ -27,25 +27,52 @@ $result=mysql_query($sql);
 // Mysql_num_row is counting table row
 $count=mysql_num_rows($result);
 
-// If result matched $email and $password, table row must be 1 row
-if($count==1){
 
-// Register $email, $password and redirect to file "login_success.php"
-$_SESSION['email']=$email;
-$_SESSION['password']=$password;
-$sql1="SELECT view FROM $tbl_name WHERE email='$email' and password='$password'";
-$result1=mysql_query($sql1);
-if($result1)
-{
-	$row=mysql_fetch_assoc($result);
-	$member_view=$row['view'];
-	}
-header("location:$member_view");
-print $sql;
+
+
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    
+    if ($count==1) {    
+        session_start();
+			$_SESSION['email_ses']=$email;
+			//@diti $_SESSION['is_remember_me']=$email;
+		$sql1="SELECT view FROM $tbl_name WHERE email='$email' and password='$password'";
+		$result1=mysql_query($sql1);
+		$sql2="SELECT name FROM $tbl_name WHERE email='$email' and password='$password'";
+		$result2=mysql_query($sql2);
+		
+		if($result1)
+		{
+			$row=mysql_fetch_assoc($result1);
+			$member_view=$row['view'];
+			 
+		}
+		if($result2)
+		{
+			$row=mysql_fetch_assoc($result2);
+			$member_name=$row['name'];
+			 
+		}
+		$_SESSION['name_ses']=$member_name;
+        if (isset($_POST['vehicle'])) {
+            /* Set cookie to last 1 year */
+            setcookie('email', $_POST['email'], time()+60*60*24*365);
+            setcookie('password', md5($_POST['password']), time()+60*60*24*365);
+			
+        
+        } 
+		/*session_start();
+			$_SESSION['email']=$_POST['email'];
+			session_write_close();*/
+        header("location:$member_view");
+        
+    } else {
+         header('Location: index.php?err=1');
+    }
 }
+
+
 else {
-header("location:index.html");
-echo "Wrong Username or Password";
-echo $count;
+    echo 'You must supply a username and password.';
 }
 ?>

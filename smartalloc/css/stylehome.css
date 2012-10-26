@@ -20,10 +20,17 @@ body{
 
 }
 
+#footer{
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+
 
 #content_wrap {
 	
-	height:600px;
+	height:470px;
 	width:1342px;
 	margin-left:auto;
 	margin-right:auto;
@@ -33,10 +40,22 @@ body{
 
 #left_content{
 	
-	height:600px;
+	height:470px;
 	width:700px;
 	float:left;
 	margin-left:190px;
+	
+
+}
+
+#right_content{
+	
+	height:470px;
+	width:320px;
+	float:right;
+	margin-right:130px;
+	margin-left:0px;
+	margin-top:37px;
 	
 
 }
@@ -99,11 +118,11 @@ body {
 
 a, a:visited {
 	color:blue;
-	text-decoration:none;
+	text-decoration:underline;
 }
 a:hover, a:active {
-	color:#000;
-	text-decoration:none;
+	color: #005580;
+	text-decoration:underline;
 }
 
 
@@ -119,17 +138,7 @@ a:hover, a:active {
 	clear:both;
 }
 
-#right_content{
-	
-	height:600px;
-	width:320px;
-	float:right;
-	margin-right:130px;
-	margin-left:0px;
-	margin-top:37px;
-	
 
-}
 #container{
 	width:1200px;
 	margin: auto auto;
@@ -170,6 +179,8 @@ a:hover, a:active {
     padding: 5px 45px;  
 }  
 
+
+
 ul, li {  
     margin: 0; padding: 0;  
 }  
@@ -179,7 +190,7 @@ ul#nav li a:link,ul#nav li a:visited {
 	text-decoration:none;
 	}
 
-ul#nav li a:hover,ul#nav li a:active {
+ul#nav li a:hover,ul#nav  li.active a {
 	color:  #f4ba51 ;
 	text-decoration:none;
 }

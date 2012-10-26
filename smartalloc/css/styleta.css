@@ -10,14 +10,13 @@ body {
 	font-weight:inherit;
 	font-style:inherit;
 	font-size:100%;
-	font-family:font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	vertical-align:baseline;
 
 
 
 }
 
-a.button{
+/*a.button{
 display:block;
 color:#555555;
 font-weight:bold;
@@ -29,7 +28,17 @@ width:191px;
 }
 a:hover.button{
 color:#0066CC;
+}*/
+
+a, a:visited {
+	color:blue;
+	text-decoration:underline;
 }
+a:hover, a:active {
+	color:#999;
+	text-decoration:underline;
+}
+
 
 
 
@@ -43,9 +52,10 @@ color:#0066CC;
 }
 
 
+
 #content_wrap {
 	
-	height:600px;
+	height:470px;
 	width:1342px;
 	margin-left:auto;
 	margin-right:auto;
@@ -55,13 +65,40 @@ color:#0066CC;
 
 #left_content{
 	
-	height:600px;
-	width:900px;
+	height:470px;
+	width:700px;
 	float:left;
-	margin-left:190px;
+	margin-left:150px;
 	
 
 }
+
+#right_content{
+	
+	height:400px;
+	width:350px;
+	float:right;
+	margin-right:20px;
+	margin-left:0px;
+	margin-top:10px;
+	
+	border: 2px solid white;
+  /*	background-color:  #39aea8 ;*/
+  	background-shadow: #000 1px 1px;
+    
+	
+
+}
+#footer{
+	width:1342px;
+	postion:relative;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+
+
 #container{
 	width:1200px;
 	margin: auto auto;
@@ -109,16 +146,16 @@ ul#nav li a:link,ul#nav li a:visited {
 	color: #39aea8;
 	text-decoration:none;
 	}
-ul#nav li a:hover,ul#nav li a:active {
+ul#nav li a:hover,ul#nav  li.active a {
 	color:  #f4ba51 ;
-text-decoration:none;
+	text-decoration:none;
 }
 
 	
 #file
 {
 	margin-left:410px;
-	height:22px;
+	height:27px;
 	width:290px;
   	border: 2px solid white;
   	background-color:  #39aea8 ;
