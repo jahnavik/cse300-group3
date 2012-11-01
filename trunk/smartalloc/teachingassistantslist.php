@@ -16,23 +16,20 @@
 
 <div id="container">  
     <ul id="nav">  
-        <li><a href="am_home.html">Home</a></li>  
+        <li><a href="am_home.php">Home</a></li>  
         <li class="active"><a href="am_teachingassistants.php">Teaching Assistants</a></li>  
         <li><a href="am_courseinfo.php">Course Info</a></li>  
         <li><a href="am_timetable.php">Time Table</a></li>  
         
     </ul>  
 </div>  
-
-
-<div id = "content_wrap">   
- <a style="margin-left:155px; font-size:16px; text-decoration:underline;" href="logout.php">Sign Out</a> 
-
-<div id="middle_content">
 	<style>
+	
+	
 #search {
 	
 	float:right;
+	margin-right:100px;
 }
 
 #search input[type="text"] {
@@ -59,11 +56,22 @@
     width: 130px;
     }
 </style>
+
+<div id = "content_wrap">   
+ <a style="margin-left:130px; position:relative; top:-10em;z-index:2; " href="logout.php" title="Log Out."><img src="images/menu-logoff.png"/> </a>
+
 <form method="get" action="/search" id="search">
-  <input name="q" type="text" size="40" placeholder="Search...." />
+  <input name="q" type="text" size="40" placeholder="Search..." />
+  
 </form>
-<button class="btn" type="submit"  id="save" ><i class="cus-add"></i>   Add Record</button>
+
+
+<div id="middle_content">
+
+
+<!--<button class="btn" type="submit"  id="save" ><i class="cus-add"></i>   Add Record</button>-->
 <?php include("read_display.php"); ?>
+<!--<img src="images/actions-delete.png" />-->
 	</div>
 </div>
 <div id="footer"><img  src="images/contactbanner.png" /></div>

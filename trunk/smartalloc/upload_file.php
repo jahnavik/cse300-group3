@@ -20,6 +20,7 @@ if (isset($_POST["submit"]))
 		if($error > 0)
 		{
 			echo "Error!".$error;
+			header("location:am_teachingassistants.php");
 		}
 		else
 		{

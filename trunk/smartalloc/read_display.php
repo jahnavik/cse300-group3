@@ -7,15 +7,17 @@
     $result = mysql_query("SELECT * FROM ta_list") 
     or die(mysql_error());  
 $i=0;
-    echo '<table id="pattern-style-a" summary="Datapass">
+    echo '<table id="hor-zebra" summary="Datapass">
 <thead>
     <tr>
-        <th scope="col">S no.</th> 
-        <th scope="col">TA Name</th> 
+        <th scope="col">#</th> 
+        <th scope="col">Name</th> 
         <th scope="col">Programme</th> 
         <th scope="col">Batch</th> 
         <th scope="col">Email</th> 
 		<th scope="col">Contact</th>
+		<th scope="col">Actions</th>
+
     </tr>
 </thead>
 <tbody>';
@@ -29,7 +31,7 @@ $i=0;
         }
 	
         // Print out the contents of each row into a table
-        echo "<tr"  . "><td>"; 
+        echo "<tr"  ."><td>"; 
         echo $row['id'];
         echo "</td><td>"; 
         echo $row['name'];
@@ -41,8 +43,12 @@ $i=0;
         echo $row['email'];
         echo "</td><td>"; 
 		echo $row['contact'];
-        echo "</td></tr>"; 
-		
+		echo "</td><td>";
+		echo "<a href=\"modify.php?id=". $row['id'] ."\"><img src='images/actions-edit.png'/></a>";
+		echo "                 ";
+		echo "<a href=\"delete.php?id=". $row['id'] ."\"><img src='images/actions-delete.png'/></a> <br>"; 
+		echo "</td></tr>"; 
+													
     } 
 
     echo "</tbody></table>";
