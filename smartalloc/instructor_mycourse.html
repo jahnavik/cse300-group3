@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My Course</title>
+	<link rel="stylesheet" href="css/style_ins.css"  type="text/css" />
+ 	<link rel="stylesheet" href="cus-icons.css" type="text/css"  />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css"  />
+</head>
+
+<body>
+
+<div id="header"><img src="images/banner3.png" width="1342" height="156" /></div>
+
+
+<div id="container">  
+    <ul id="nav">  
+        <li ><a href="instructor_home.html" title="Your dashboard">Home</a></li>  
+        <li class="active"><a href="instructor_mycourse.html" >My Course</a></li>  
+        <li><a href="instructor_ta_selection.html" >TA Selection</a></li>  
+        <li><a href="instructor_ta_results.html" >Results</a></li>  
+        
+    </ul>  
+</div>  
+ 
+
+
+<div id = "content_wrap">
+  <a style="margin-left:215px; position:relative; top:-10em;z-index:2; " href="logout.php" title="Log Out."><img src="images/menu-logoff.png"/> </a>
+
+    
+   <div class="alert  alert-info" style=" font-weight:normal;  margin-left: 150px; width: 1000px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
+  <button type="button" class="close" data-dismiss="alert" title="Fill out all your course details on on this page."><i class="cus-information"></i></button>
+  My Course Details:
+</div>
+  <div id="left_content">
+	  
+      <form action="#">
+      <p  class = "text-info" style=" font-weight:normal;  margin-top: 20px; margin-left: 10px; width: 1000px; line-height: 1; font: 14px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;" > 
+      <i  class="cus-bullet-star" ></i> Course No:  &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp   <input type="text" placeholder="Enter your course number ...">      
+	  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  
+      Special Requirements: &nbsp <textarea rows="3" placeholder=" Enter any special requirement you have in your course. Eg - You may need more TAs in ..."></textarea> </br> 
+      </br> <i  class="cus-bullet-star" ></i> Course Name:      &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="text" placeholder=" Enter your course name  ..."> 
+       &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  
+      <i  class="cus-email" ></i>   Email-Id:  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" placeholder="Enter your email-id ... "> </br>
+      </br> <i  class="cus-bullet-star" ></i>  Course Details: &nbsp  &nbsp &nbsp &nbsp  <textarea rows="3"  placeholder="Enter your course details  ..."></textarea> 
+      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp 
+      <i  class="cus-vcard" ></i>   Contact No:  &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" placeholder="Enter your email-id ... "></br></br> 
+       <i  class="cus-bullet-star" ></i> Work Expectations: &nbsp <textarea rows="3" placeholder="Enter the details about what you expect from your teaching assistants  ..."></textarea>  
+       
+       <button class="btn btn-info" style="margin-left: 780px; margin-bottom:120px;" type="submit" name="sendinfo" formaction="#" title="Send your course info" ><i class="cus-tick"></i> Send Details</button>
+     
+     </br>
+     
+     </p> 
+      
+    
+    </form>
+  </div>
+	
+</div>
+
+<div id="footer"><img  src="images/contactbanner.png" /></div>
+
+
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
