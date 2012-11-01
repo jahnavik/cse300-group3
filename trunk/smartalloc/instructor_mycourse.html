@@ -35,20 +35,20 @@
 </div>
   <div id="left_content">
 	  
-      <form action="#">
+      <form action="instructor_update.php" method="post">
       <p  class = "text-info" style=" font-weight:normal;  margin-top: 20px; margin-left: 10px; width: 1000px; line-height: 1; font: 14px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;" > 
-      <i  class="cus-bullet-star" ></i> Course No:  &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp   <input type="text" placeholder="Enter your course number ...">      
+      <i  class="cus-bullet-star" ></i> Course No:  &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp   <input type="text" name="i1" placeholder="Enter your course number ...">      
 	  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  
-      Special Requirements: &nbsp <textarea rows="3" placeholder=" Enter any special requirement you have in your course. Eg - You may need more TAs in ..."></textarea> </br> 
-      </br> <i  class="cus-bullet-star" ></i> Course Name:      &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="text" placeholder=" Enter your course name  ..."> 
+      Special Requirements: &nbsp <textarea rows="3" name="i5" placeholder="Enter any special requirement you have in your course. Eg - You may need more TAs in ..."></textarea> </br> 
+      </br> <i  class="cus-bullet-star" ></i> Course Name:      &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="text" name="i2" placeholder=" Enter your course name  ..."> 
        &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  
-      <i  class="cus-email" ></i>   Email-Id:  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" placeholder="Enter your email-id ... "> </br>
-      </br> <i  class="cus-bullet-star" ></i>  Course Details: &nbsp  &nbsp &nbsp &nbsp  <textarea rows="3"  placeholder="Enter your course details  ..."></textarea> 
+      <i  class="cus-email" ></i>   Email-Id:  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" name="i6" placeholder="Enter your Email-ID ... "> </br>
+      </br> <i  class="cus-bullet-star" ></i>  Course Details: &nbsp  &nbsp &nbsp &nbsp  <textarea rows="3" name="i3" placeholder="Enter your course details  ..."></textarea> 
       &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp 
-      <i  class="cus-vcard" ></i>   Contact No:  &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" placeholder="Enter your email-id ... "></br></br> 
-       <i  class="cus-bullet-star" ></i> Work Expectations: &nbsp <textarea rows="3" placeholder="Enter the details about what you expect from your teaching assistants  ..."></textarea>  
+      <i  class="cus-vcard" ></i>   Contact No:  &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" name="i7" placeholder="Enter your Contact No. ... "></br></br> 
+       <i  class="cus-bullet-star" ></i> Work Expectations: &nbsp <textarea rows="3" name="i4" placeholder="Enter the details about what you expect from your teaching assistants  ..."></textarea>  
        
-       <button class="btn btn-info" style="margin-left: 780px; margin-bottom:120px;" type="submit" name="sendinfo" formaction="#" title="Send your course info" ><i class="cus-tick"></i> Send Details</button>
+       <button class="btn btn-info" style="margin-left: 780px; margin-bottom:120px;" type="submit" name="sendinfo" title="Send your course info" ><i class="cus-tick"></i> Send Details</button>
      
      </br>
      
@@ -56,6 +56,7 @@
       
     
     </form>
+
   </div>
 	
 </div>
