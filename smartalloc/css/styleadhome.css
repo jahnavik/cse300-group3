@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	
+	
+	 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	 
+}
+
+
+#header{
+	
+
+	height:156px;
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+
+}
+
+#footer{
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+
+#content_wrap {
+	
+	height:500px;
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+		
+}
+
+#left_content{
+	
+	height:500px;
+	width:700px;
+	float:left;
+	margin-left:190px;
+	
+
+}
+
+/*=================================*/
+
+/*====================*/
+/*=== Reset Styles ===*/
+/*====================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+body {
+	color:black;
+	background:white;
+}
+table {
+	border-collapse:separate;
+	border-spacing:0;
+}
+caption, th, td {
+	text-align:left;
+	font-weight:normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:"";
+}
+blockquote, q {
+	quotes:"" "";
+}
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/*===================*/
+/*=== Main Styles ===*/
+/*===================*/
+body {
+	color:#333;
+	background:#eee;
+}
+
+a, a:visited {
+	color:blue;
+	text-decoration:none;
+}
+a:hover, a:active {
+	color:#000;
+	text-decoration:none;
+}
+
+
+.slider-wrapper { 
+	width: 80%; 
+	margin: 10px -40px;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clear {
+	clear:both;
+}
+
+#right_content{
+	
+	height:500px;
+	width:320px;
+	float:right;
+	margin-right:130px;
+	margin-left:0px;
+	margin-top:37px;
+	
+
+}
+#container{
+	width:1200px;
+	margin: auto auto;
+	position:relative;
+	top:-2em;
+	z-index:2;
+	
+	
+}
+
+
+
+#nav {  
+    position: relative;  
+    float: left;  
+	margin-left:360px;
+	
+}  
+
+#nav li { 
+ 
+    float: left;  
+    list-style: none;  
+    border-right:1px solid #afc4cc;
+	
+}  
+
+#nav li a {  
+    color: #39aea8;  
+    position: relative;  
+    z-index: 2;  
+    float: left;  
+    font-size: 15px;  
+	font-weight:bold;
+    font-family: helvetica, arial, sans-serif;  
+	
+    text-decoration: none;  
+    padding: 5px 20px;  
+}  
+
+ul, li {  
+    margin: 0; padding: 0;  
+}  
+
+ul#nav li a:link,ul#nav li a:visited {
+	color: #39aea8;
+	text-decoration:none;
+	}
+
+ul#nav li a:hover,ul#nav  li.active a {
+	color:  #f4ba51 ;
+	text-decoration:none;
+}
+
