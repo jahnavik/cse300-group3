@@ -98,7 +98,7 @@ if (isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
     
 
    // $_SESSION['email']=$_COOKIE['email'];
-        header('Location: am_home.html');
+        header('Location: am_home.php');
     }
     
 

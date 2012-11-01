@@ -4,7 +4,14 @@ require_once 'reader.php';
 include "connect.php";
 
 
-$filename='ta_list.xls';
+$query = mysql_query("SELECT location from upload");
+//echo "$query";
+while($rows = mysql_fetch_array($query))
+{
+	$filename = $rows['location'];
+}
+
+//$filename='ta_list.xls';
 
 if (isset($_POST["submit1"]))
 {
@@ -53,4 +60,3 @@ else
 {
 	echo "<a href='index.php'>";
 }
-		
