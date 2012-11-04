@@ -54,6 +54,25 @@ $err=$_GET['err'];
 			<input id="email" name="email" type="text" title="Enter your email address here"/> <br/>
 			<label>Password:</label>
 			<input id="pass" name="password"  type="password" title="Enter password here"/>
+            
+            <div id=err style=" width: 300px; height: 10px; align : left; ">
+            
+            <?
+				if ($err==1)
+				{
+					echo '<p id="invalid"  summary="datapass"></p>';
+					echo "Invalid username/password. Try Again!";
+				}
+				
+				
+				if ($err==2)
+				{
+					echo '<p id="invalid"  summary="datapass"></p>';
+					echo "Please enter Username or Password.";
+				}
+			?>
+            </div>
+
 			<input id="check" type="checkbox" name="vehicle" value="staysigned">
 			<label id="stay" >Stay signed in</label>
 			<button id="submit" type="submit"  >Sign in</button>
@@ -64,13 +83,8 @@ $err=$_GET['err'];
 				<div align="center"> <a href="loginacess.html" style="text-decoration:underline; font-weight:normal;color:#0063DC; font-size:13px; " >Can't access your account?</a> </div>
 			</div>
             
-            <?
-				if ($err==1)
-				{
-					echo '<p id="invalid"  summary="datapass"></p>';
-					echo "Invalid username/password. Try Again!";
-				}
-			?>
+           
+
 		</div>
     
         </div>

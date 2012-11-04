@@ -34,7 +34,7 @@ body{
 	width:1342px;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:10px;
+	
 		
 }
 
@@ -163,6 +163,7 @@ a:hover, a:active {
     float: left;  
     list-style: none;  
     border-right:1px solid #afc4cc;
+	background:#fff;
 	
 }  
 
@@ -179,8 +180,6 @@ a:hover, a:active {
     padding: 5px 45px;  
 }  
 
-
-
 ul, li {  
     margin: 0; padding: 0;  
 }  
@@ -189,9 +188,28 @@ ul#nav li a:link,ul#nav li a:visited {
 	color: #39aea8;
 	text-decoration:none;
 	}
-
 ul#nav li a:hover,ul#nav  li.active a {
 	color:  #f4ba51 ;
 	text-decoration:none;
 }
 
+
+#nav li ul li{ 	float: left; 
+				width: 260px; 
+				text-align: left; 
+				padding: 5px 10px; 
+				border-top: 1px solid #afc4cc;  
+				border-left: 1px solid #afc4cc; 
+				border-bottom: 1px solid #afc4cc;  
+				color: #39aea8;  
+				font-size: 5px; 	
+				z-index: 1000;  }
+
+#nav li ul{ 	position:absolute;  
+				top: 28px; 
+				left: 0; 
+				visibility: hidden; 
+				margin-left:250px;   }
+
+#nav li:hover ul{ 	visibility:visible; 
+					color:  #f4ba51 ; }

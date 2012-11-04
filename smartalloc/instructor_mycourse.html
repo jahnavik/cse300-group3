@@ -6,6 +6,29 @@
 	<link rel="stylesheet" href="css/style_ins.css"  type="text/css" />
  	<link rel="stylesheet" href="cus-icons.css" type="text/css"  />
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css"  />
+    <script	type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>
+	<script>
+		jQuery(function($){
+			$('select').each(function(i, e){
+				if (!($(e).data('convert') == 'no')) {
+					$(e).hide().wrap('<div class="btn-group" id="select-group-' + i + '" />');
+					var select = $('#select-group-' + i);
+					var current = ($(e).val()) ? $(e).val(): '&nbsp;';
+					select.html('<input type="hidden" value="' + $(e).val() + '" name="' + $(e).attr('name') + '" id="' + $(e).attr('id') + '" class="' + $(e).attr('class') + '" /><a class="btn" href="javascript:;">' + current + '</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="javascript:;"><span class="caret"></span></a><ul class="dropdown-menu"></ul>');
+					$(e).find('option').each(function(o,q) {
+						select.find('.dropdown-menu').append('<li><a href="javascript:;" data-value="' + $(q).attr('value') + '">' + $(q).text() + '</a></li>');
+						if ($(q).attr('selected')) select.find('.dropdown-menu li:eq(' + o + ')').click();
+					});
+					select.find('.dropdown-menu a').click(function() {
+						select.find('input[type=hidden]').val($(this).data('value')).change();
+						select.find('.btn:eq(0)').text($(this).text());
+					});
+				}
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -15,9 +38,15 @@
 
 <div id="container">  
     <ul id="nav">  
-        <li ><a href="instructor_home.html" title="Your dashboard">Home</a></li>  
+        <li><a href="instructor_home.html" title="Your dashboard">Home</a></li>  
         <li class="active"><a href="instructor_mycourse.html" >My Course</a></li>  
-        <li><a href="instructor_ta_selection.html" >TA Selection</a></li>  
+        <li><a href="instructor_ta_selection.html" >TA Selection</a>
+          <ul>
+			<li><a href="#">First Preference TAs</a></li>
+			<li><a href="#">Second Preference TAs</a></li>
+			<li><a href="#">Third Preference TAs</a></li>
+        </ul>
+       </li>  
         <li><a href="instructor_ta_results.html" >Results</a></li>  
         
     </ul>  
@@ -26,44 +55,206 @@
 
 
 <div id = "content_wrap">
-  <a style="margin-left:215px; position:relative; top:-10em;z-index:2; " href="logout.php" title="Log Out."><img src="images/menu-logoff.png"/> </a>
+  <a style="margin-left:214px; position:relative; top:-9.6em;z-index:1;  " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
 
     
-   <div class="alert  alert-info" style=" font-weight:normal;  margin-left: 150px; width: 1000px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
+   <div class="alert  alert-info" style=" font-weight:normal; float:inherit; margin-left: 150px; width: 1000px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
+   
   <button type="button" class="close" data-dismiss="alert" title="Fill out all your course details on on this page."><i class="cus-information"></i></button>
   My Course Details:
 </div>
-  <div id="left_content">
+  <div id="left_contentmy">
 	  
-      <form action="instructor_update.php" method="post">
+      <form action="#">
       <p  class = "text-info" style=" font-weight:normal;  margin-top: 20px; margin-left: 10px; width: 1000px; line-height: 1; font: 14px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;" > 
-      <i  class="cus-bullet-star" ></i> Course No:  &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp   <input type="text" name="i1" placeholder="Enter your course number ...">      
-	  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  
-      Special Requirements: &nbsp <textarea rows="3" name="i5" placeholder="Enter any special requirement you have in your course. Eg - You may need more TAs in ..."></textarea> </br> 
-      </br> <i  class="cus-bullet-star" ></i> Course Name:      &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="text" name="i2" placeholder=" Enter your course name  ..."> 
+    
+    
+      <i  class="cus-bullet-star" ></i> Course No:  &nbsp &nbsp &nbsp &nbsp  &nbsp  &nbsp &nbsp   <input type="text" placeholder="Enter your course number ...">      
+    
+    
+    
+    
+      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  
+    
+    
+    
+    <i  class="cus-bullet-star" ></i>  Course Details: &nbsp  &nbsp &nbsp &nbsp  <textarea rows="3"  placeholder="Enter your course details  ..."></textarea> 
+ 
+           
+            
+      </br> <i  class="cus-bullet-star" ></i> Course Name:      &nbsp &nbsp &nbsp &nbsp &nbsp  <input type="text" placeholder=" Enter your course name  ..."> 
+    
        &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  
-      <i  class="cus-email" ></i>   Email-Id:  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" name="i6" placeholder="Enter your Email-ID ... "> </br>
-      </br> <i  class="cus-bullet-star" ></i>  Course Details: &nbsp  &nbsp &nbsp &nbsp  <textarea rows="3" name="i3" placeholder="Enter your course details  ..."></textarea> 
-      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp 
-      <i  class="cus-vcard" ></i>   Contact No:  &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" name="i7" placeholder="Enter your Contact No. ... "></br></br> 
-       <i  class="cus-bullet-star" ></i> Work Expectations: &nbsp <textarea rows="3" name="i4" placeholder="Enter the details about what you expect from your teaching assistants  ..."></textarea>  
+    
+   
+    
+       <i  class="cus-bullet-star" ></i> Work Expectations: &nbsp <textarea rows="3" placeholder="Enter the details about what you expect from your teaching assistants  ..."></textarea> 
        
-       <button class="btn btn-info" style="margin-left: 780px; margin-bottom:120px;" type="submit" name="sendinfo" title="Send your course info" ><i class="cus-tick"></i> Send Details</button>
-     
-     </br>
-     
+       
+       </br> </br>
+    
+		 <i  class="cus-bullet-star" ></i>        Course Year:  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp    &nbsp  
+         
+         
+         &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp    &nbsp
+         
+         &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp    &nbsp
+         
+         &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp    &nbsp
+         
+         &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp    &nbsp
+         
+         &nbsp &nbsp &nbsp &nbsp &nbsp  
+         <i  class="cus-email" ></i>   Email-Id:  &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" placeholder="Enter your email-id ... "> 
+      
+       
+       <select name="test" id="weee" size=2 style="margin-left: 300px;">
+
+
+<option name=one selected>First Year Course</option>
+<option name=two value=two>Second Year Course</option>
+<option name=three value=one>Advanced Course</option>
+
+ 
+  			</select>   
+    
+      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp 
+    	
+      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp 
+      
+      
+      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp 
+      
+      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp 
+      
+      
+      &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  
+    	
+      <i  class="cus-vcard" ></i>   Contact No:  &nbsp &nbsp  &nbsp &nbsp  &nbsp  &nbsp <input type="text" placeholder="Enter your contact no ... "></br></br> 
+    
+        
+           
+   
      </p> 
       
     
     </form>
-
   </div>
-	
+  
+  <div id="right_contentmy">
+  
+  	   <button class="btn btn-info" style="margin-top:115px;" type="submit" name="sendinfo" formaction="#" title="Send your course info" ><i class="cus-tick"></i> Send</button>
+       
+  </div>
+  
+
+             <div id="clockbox" style="line-height: 1;  position:relative; top:-49.7em;z-index:1; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
+        
+        
+<div id="lastvisited" style = "line-height: 1; position:relative; top:-48.2em; z-index:1; margin-right: -305px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 150px; color:  #3a87ad; float: right;">  
+ 
+  <script type = "text/javascript">
+
+
+var days = 730; // days until cookie expires = 2 years.
+var lastvisit=new Object();
+var firstvisitmsg="This is your first visit to this page. Welcome!"; 
+lastvisit.subsequentvisitmsg=" Your last visit was on: [displaydate]";
+
+lastvisit.getCookie=function(Name){ 
+var re=new RegExp(Name+"=[^;]+", "i"); 
+if (document.cookie.match(re)) 
+return document.cookie.match(re)[0].split("=")[1];
+return''; 
+}
+
+lastvisit.setCookie=function(name, value, days){ 
+var expireDate = new Date();
+
+var expstring=expireDate.setDate(expireDate.getDate()+parseInt(days));
+document.cookie = name+"="+value+"; expires="+expireDate.toGMTString()+"; path=/";
+}
+
+lastvisit.showmessage = function() {
+var wh = new Date();
+if (lastvisit.getCookie("visitc") == "") { 
+lastvisit.setCookie("visitc", wh, days); 
+document.write(firstvisitmsg);
+}
+
+else {
+var lv = lastvisit.getCookie("visitc");
+var lvp = Date.parse(lv);
+var now = new Date();
+now.setTime(lvp);
+var day=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+var month=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+var dd = now.getDate();
+var dy = now.getDay();
+dy = day[dy];
+var mn = now.getMonth();
+mn = month[mn];
+yy = now.getFullYear();
+var hh = now.getHours();
+var ampm = "AM";
+if (hh >= 12) {ampm = "PM"}
+if (hh >12){hh = hh - 12};
+if (hh == 0) {hh = 12}
+if (hh < 10) {hh = "" + hh};
+var mins = now.getMinutes();
+if (mins < 10) {mins = "0"+ mins}
+var secs = now.getSeconds();
+if (secs < 10) {secs = "0" + secs}
+var dispDate = dy + ", " + mn + " " + dd + ", " + yy + " " + hh + ":" + mins + ":" + secs + " " + ampm
+document.write(lastvisit.subsequentvisitmsg.replace("\[displaydate\]", dispDate))
+}
+
+lastvisit.setCookie("visitc", wh, days);
+
+}
+
+lastvisit.showmessage();
+
+</script>
+
+
 </div>
 
+</div>
 <div id="footer"><img  src="images/contactbanner.png" /></div>
 
 
 <script src="js/bootstrap.js"></script>
+ <script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     if(nhour ==  0) {ap = " AM";nhour = 12;} 
+else if(nhour <= 11) {ap = " AM";} 
+else if(nhour == 12) {ap = " PM";} 
+else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML="Today: "+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script> 
+
 </body>
 </html>
