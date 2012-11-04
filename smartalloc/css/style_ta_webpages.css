@@ -1,0 +1,282 @@
+body {
+	background-color: #eee;
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	vertical-align:baseline;
+}
+
+#header{
+	
+	postion:relative;
+	height:156px;
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+
+#content_wrap {
+	
+	height:490px;
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+	postion:relative;
+	margin-top:10px;
+	
+}
+
+#left_content{
+	
+	height:370px;
+	width:1050px;
+	float:left;
+	margin-left:150px;
+	border: 2px solid  #bce8f1;
+  	background-shadow: #000 2px 2px;
+
+}
+
+#left_content2{
+	
+	height:370px;
+	width:420px;
+	float:left;
+	margin-left:150px;
+	border: 2px solid  #fff;
+  	background-shadow: #fff 2px 2px;
+
+}
+
+
+
+
+#middle_content{
+	
+	height:400px;
+	width:250px;
+	float:left;
+	margin-left:150px;
+	margin-top:10px;
+	postion:absolute;
+	
+}
+
+#right_content{
+	
+	height:400px;
+	width:350px;
+	float:right;
+	margin-right:20px;
+	margin-left:0px;
+	margin-top:10px;
+	postion:absolute;
+	border: 2px solid #bce8f1;
+  /*	background-color:  #39aea8 ;*/
+  	background-shadow: #000 1px 1px;
+    
+	
+
+}
+
+
+#left_content1{
+	
+	height:470px;
+	width:400px;
+	float:left;
+	margin-left:150px;
+	margin-top:10px;
+
+}
+
+#right_content1{
+	
+	height:300px;
+	width:580px;
+	float:right;
+	margin-right:140px;
+	margin-left:0px;
+	margin-top:10px;
+	
+	border: 2px solid #bce8f1;
+  /*	background-color:  #39aea8 ;*/
+  	background-shadow: #000 1px 1px;
+    
+
+}
+
+#footer{
+	width:1342px;
+	postion:relative;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+#content_wrap1 {
+	
+	height:500px;
+	width:1342px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:10px;
+
+}
+
+#middle_content1{
+	height:470px;
+	width:1000px;
+	margin-left:100px;
+	margin-right:auto;
+}
+#left_contentmy{
+	
+	height:335px;
+	width:1050px;
+	float:left;
+	margin-left:150px;
+	border: 2px solid  #bce8f1;
+  	background-shadow: #000 2px 2px;
+
+}
+
+#boxform{
+	
+	height:300px;
+	width:580px;
+	float:right;
+	margin-right:140px;
+	margin-left:0px;
+	margin-top:10px;
+
+	
+	border: 2px solid #fff;
+	background-color:  #39aea8 ;
+  	background-shadow: #000 1px 1px;
+    
+}
+
+#container{
+	width:1200px;
+	margin: auto auto;
+	position:relative;
+	top:-2em;
+	z-index:2;
+	
+	
+}
+
+#nav {  
+    position: relative;  
+    float: left;  
+	margin-left:400px;
+}  
+
+#nav li { 
+ 
+    float: left;  
+    list-style: none;  
+    border-right:1px solid #afc4cc;
+	background:#fff;
+	
+}  
+
+#nav li a {  
+    color: #39aea8;  
+    position: relative;  
+    z-index: 2;  
+    float: left;  
+    font-size: 15px;  
+	font-weight:bold;
+    font-family: helvetica, arial, sans-serif;  
+	
+    text-decoration: none;  
+    padding: 4px 30px;  
+}  
+
+ul, li {  
+    margin: 0; padding: 0;  
+}  
+
+ul#nav li a:link,ul#nav li a:visited {
+	color: #39aea8;
+	text-decoration:none;
+	}
+ul#nav li a:hover,ul#nav  li.active a {
+	color:  #f4ba51 ;
+	text-decoration:none;
+}
+
+
+#nav li ul li{ 	float: left; 
+				width: 290px; 
+				text-align: left; 
+				padding: 5px 10px; 
+				border-top: 1px solid #afc4cc;  
+				border-left: 1px solid #afc4cc; 
+				border-bottom: 1px solid #afc4cc;  
+				color: #39aea8;  
+				font-size: 5px; 	
+				z-index: 10000;
+				  }
+
+#nav li ul{ 	position:absolute;  
+				top: 28px; 
+				left: 0; 
+				visibility: hidden; 
+				margin-left:60px;   }
+
+#nav li:hover ul{ 	visibility:visible; 
+					color:  #f4ba51 ; }
+
+
+#hor-zebra
+{
+	font: 17px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 1000px;
+	font-size: 14px;
+	margin: 45px;
+	width: 1100px;
+	text-align: left;
+	border-collapse: collapse;
+	background: url('table-images/pattern.png');
+	line-height: 2em;
+}
+#hor-zebra th
+{
+    font-size: 16px;
+	font-weight: normal;
+	padding: 8px;
+	border-bottom: 1px solid #fff;
+	color:  #3a87ad;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+    border-bottom: 1px solid #ccc;
+    background-color: #d9edf7;
+  
+}
+#hor-zebra td
+{
+	padding: 8px;
+	color: #669;
+}
+#hor-zebra tr:nth-child(odd)
+{
+	background: #eee; 
+}
+
+#hor-zebra tr:nth-child(even) { 
+      background-color:  #fff;
+ }
+
+
+#hor-zebra tbody tr:hover td
+{
+	color: #39aea8;
+	
+}
