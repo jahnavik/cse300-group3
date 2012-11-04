@@ -17,7 +17,7 @@
 <div id="container">  
     <ul id="nav">  
         <li><a href="am_home.php">Home</a></li>  
-        <li class="active"><a href="am_teachingassistants.php">Teaching Assistants</a></li>  
+        <li class="active"><a href="teachingassistantslist.php">Teaching Assistants</a></li>  
         <li><a href="am_courseinfo.php">Course Info</a></li>  
         <li><a href="am_timetable.php">Time Table</a></li>  
         
@@ -58,12 +58,21 @@
 </style>
 
 <div id = "content_wrap">   
- <a style="margin-left:130px; position:relative; top:-10em;z-index:2; " href="logout.php" title="Log Out."><img src="images/menu-logoff.png"/> </a>
+ <a style="margin-left:130px; position:relative; top:-9.6em;z-index:1; " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
+ 
+ 
 
 <form method="get" action="/search" id="search">
   <input name="q" type="text" size="40" placeholder="Search..." />
   
 </form>
+
+   <div class="alert  alert-info" style=" font-weight:normal; margin-left: 150px; width:800px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
+  <button type="button" class="close" data-dismiss="alert" title="This page contains the list of this semester's teaching assistants. "><i class="cus-information"></i></button>
+ Teaching Assistants for the current semester: 
+</div>
+
+
 
 
 <div id="middle_content">
@@ -73,8 +82,117 @@
 <?php include("read_display.php"); ?>
 <!--<img src="images/actions-delete.png" />-->
 	</div>
+    
+    </div>
+    
+    <div id="clockbox" style="line-height: 1;  position:relative; top:-55em;z-index:1; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
+        
+        
+<div id="lastvisited" style = "line-height: 1; position:relative; top:-53.5em; z-index:1; margin-right: -294px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 150px; color:  #3a87ad; float: right;">  
+
+
+<script type = "text/javascript">
+
+
+var days = 730; // days until cookie expires = 2 years.
+var lastvisit=new Object();
+var firstvisitmsg="This is your first visit to this page. Welcome!"; 
+lastvisit.subsequentvisitmsg=" Your last visit was on: [displaydate]";
+
+lastvisit.getCookie=function(Name){ 
+var re=new RegExp(Name+"=[^;]+", "i"); 
+if (document.cookie.match(re)) 
+return document.cookie.match(re)[0].split("=")[1];
+return''; 
+}
+
+lastvisit.setCookie=function(name, value, days){ 
+var expireDate = new Date();
+
+var expstring=expireDate.setDate(expireDate.getDate()+parseInt(days));
+document.cookie = name+"="+value+"; expires="+expireDate.toGMTString()+"; path=/";
+}
+
+lastvisit.showmessage = function() {
+var wh = new Date();
+if (lastvisit.getCookie("visitc") == "") { 
+lastvisit.setCookie("visitc", wh, days); 
+document.write(firstvisitmsg);
+}
+
+else {
+var lv = lastvisit.getCookie("visitc");
+var lvp = Date.parse(lv);
+var now = new Date();
+now.setTime(lvp);
+var day=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+var month=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+var dd = now.getDate();
+var dy = now.getDay();
+dy = day[dy];
+var mn = now.getMonth();
+mn = month[mn];
+yy = now.getFullYear();
+var hh = now.getHours();
+var ampm = "AM";
+if (hh >= 12) {ampm = "PM"}
+if (hh >12){hh = hh - 12};
+if (hh == 0) {hh = 12}
+if (hh < 10) {hh = "" + hh};
+var mins = now.getMinutes();
+if (mins < 10) {mins = "0"+ mins}
+var secs = now.getSeconds();
+if (secs < 10) {secs = "0" + secs}
+var dispDate = dy + ", " + mn + " " + dd + ", " + yy + " " + hh + ":" + mins + ":" + secs + " " + ampm
+document.write(lastvisit.subsequentvisitmsg.replace("\[displaydate\]", dispDate))
+}
+
+lastvisit.setCookie("visitc", wh, days);
+
+}
+
+lastvisit.showmessage();
+
+</script>
+
 </div>
+
+
+    
+        
+
+
 <div id="footer"><img  src="images/contactbanner.png" /></div>
 <script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+nsec   = d.getSeconds();
+
+if(nyear<1000) nyear=nyear+1900;
+
+     if(nhour ==  0) {ap = " AM";nhour = 12;} 
+else if(nhour <= 11) {ap = " AM";} 
+else if(nhour == 12) {ap = " PM";} 
+else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+if(nsec <= 9) {nsec = "0" +nsec;}
+
+
+document.getElementById('clockbox').innerHTML="Today: "+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
 </body>
 </html>
