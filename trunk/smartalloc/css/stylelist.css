@@ -91,7 +91,7 @@ a:hover, a:active {
     font-family: helvetica, arial, sans-serif;  
 	
     text-decoration: none;  
-    padding: 5px 45px;  
+    padding: 4px 45px;  
 }  
 
 ul, li {  
@@ -102,7 +102,7 @@ ul#nav li a:link,ul#nav li a:visited {
 	color: #39aea8;
 	text-decoration:none;
 	}
-ul#nav li a:hover,ul#nav li a:active {
+ul#nav li a:hover,ul#nav  li.active a  {
 	color:  #f4ba51 ;
 text-decoration:none;
 }
@@ -112,7 +112,7 @@ text-decoration:none;
  styling for the tables 
    ------------------   */
 
-
+/*
 #pattern-style-a
 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -166,7 +166,7 @@ text-decoration:none;
 {
 	color: #39aea8;
 	background: #fff;
-}
+}*/
 #hor-zebra
 {
 	font: 17px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 1000px;
