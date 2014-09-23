@@ -1,3 +1,12 @@
+<?php
+include "connect.php";
+
+session_start();
+$member_name = $_SESSION['name_ses'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +25,17 @@
 
 <div id="container">  
     <ul id="nav">  
-        <li ><a href="ta_home.html" title="Your dashboard">Home</a></li>  
-     	<li class="active"><a href="ta_courses.html" >Courses</a>
+        <li ><a href="ta_home.php" title="Your dashboard">Home</a></li>  
+     	<li class="active"><a href="ta_courses.php" >Courses</a>
         <ul>
 		    <li><a href="ta_firstyear_courses.php">B.Tech First Year Courses</a></li>
 			<li><a href="ta_secondyear_courses.php">B.Tech Second Year Courses</a></li>
 			<li><a href="ta_thirdyear_courses.php">B.Tech Advanced Courses</a></li>
         </ul>
         </li> 
-        <li><a href="ta_courses_availaibility.html" >Availaibility</a></li>  
-        <li><a href="ta_application_form.html" >Application</a></li>  
-        <li ><a href="ta_results.html" >Results</a></li>  
+        <li><a href="ta_courses_availaibility.php" >Availaibility</a></li>  
+<li><a href="ta_view_application.php" >View Your Application</a></li>   
+        <li ><a href="ta_results.php" >Results</a></li>  
         
     </ul>  
 </div> 
@@ -66,9 +75,8 @@
 
 <div id = "content_wrap1">   
  <a style="margin-left:223px; position:relative; top:-9.6em;z-index:1; " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
- 
-
-    
+<div style = "float:left; position: relative; margin-left:-1180px; margin-top: 24px; line-height: 1; font: 24px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 130px; font-weight:normal; "><?php echo "$member_name"; ?>
+ </div>
 <form method="get" action="/search" id="search">
   <input name="q" type="text" size="40" placeholder="Search..." />
   

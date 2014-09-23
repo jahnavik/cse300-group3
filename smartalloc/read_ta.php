@@ -1,8 +1,22 @@
 <?php
+include "connect.php";
 session_start();
+
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='vivek@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
+
 require_once 'reader.php';
 include "connect.php";
-
 
 $query = mysql_query("SELECT location from upload WHERE location LIKE '%upload%' ");
 //echo "$query";
@@ -63,7 +77,7 @@ if (isset($_POST["submit1"]))
 
 	else
 	{
-		echo "Please Sign In";
+		header("location:am_teachingassistants.php");
 	}
 }
 else
