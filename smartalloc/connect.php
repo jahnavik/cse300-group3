@@ -1,12 +1,12 @@
 <?php
 
-$db_host = "localhost";
-$db_username = "root" ;
-$db_pass = "test123";
+$host="192.168.1.20"; // Host name 
+$username="group3"; // Mysql username 
+$password="grp3orange"; // Mysql password 
+$db_name="group3"; // Database name 
 
-$connect = mysql_connect("$db_host","$db_username","$db_pass") or die ("Could not connect to Mysql");
-mysql_select_db("smartalloc") or die ("No database");
-
+$connect = mysql_connect("$host","$username","$password") or die ("Could not connect to Mysql");
+mysql_select_db("$db_name") or die ("No database");
 
 ?>
 
