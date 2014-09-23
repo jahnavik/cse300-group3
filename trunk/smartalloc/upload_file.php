@@ -1,16 +1,25 @@
 <?php
+include "connect.php";
 session_start();
 
-include "connect.php";
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='vivek@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
 
+include "connect.php";
 if (isset($_POST["submit"]))
 {
-
-	
 	if (isset($_SESSION["name"]))
 	{
-		
-		
 		$name = $_FILES["file"]["name"];
 		$type = $_FILES["file"]["type"];
 		$size = $_FILES["file"]["size"];
@@ -19,15 +28,13 @@ if (isset($_POST["submit"]))
 		
 		if ($type== "application/vnd.ms-excel")
 		{
-		if($error > 0)
-		{
+			if($error > 0)
+			{
 //			echo "Error!".$error;
 			header("location:am_teachingassistants.php");
-		}
-		
-		
-		else
-		{  
+			}
+			else
+			{  
 		
 			$location = "upload/".$name;
 				
@@ -36,8 +43,6 @@ if (isset($_POST["submit"]))
 				//echo $name." already exists";
 				unlink($location);
 			}
-
-				
 				move_uploaded_file($tmp_name,$location);
 				$user = $_SESSION["name"];
 				$sqlcode = mysql_query("INSERT INTO upload (id,user,location) VALUES ('','$user','$location')");
@@ -46,22 +51,24 @@ if (isset($_POST["submit"]))
 				//header("location:read_ta.php?file='$name'");
 
 			
+			}
 		}
-	}
 	
-	else{
-		
-		//	echo "Error";	
+	else
+	{
+		//echo "Error1";	
 		header("location:am_teachingassistants.php");
 	}
 	
 	}
 	else
 	{
-		echo "Please Sign In";
+		//echo "Error2";	
+			header("location:am_teachingassistants.php");
 	}
 	}
 else
 {
 	echo "<a href='index.php'>";
 }
+?>

@@ -1,5 +1,18 @@
 <?php
+include "connect.php";
 session_start();
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='vivek@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
 
 include "connect.php";
 
@@ -59,6 +72,7 @@ if (isset($_POST["submit"]))
 	else
 	{
 		echo "Please Sign In";
+			header("location:am_courseinfo.php");
 	}
 	}
 else

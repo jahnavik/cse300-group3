@@ -1,7 +1,7 @@
 <?php
 include "connect.php";
 //require_once 'file:///C|/Users/Jahnavi/Downloads/excelsheet_reader/PEAR.php';
-require_once 'C:\xampp\htdocs\excelsheet_reader\oleread.inc';
+require_once 'excelsheet_reader\oleread.inc';
 
 //define('Spreadsheet_Excel_Reader_HAVE_ICONV', function_exists('iconv'));
 //define('Spreadsheet_Excel_Reader_HAVE_MB', function_exists('mb_convert_encoding'));

@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+include "connect.php";
+
+session_start();
+$member_name = $_SESSION['name_ses'];
+
+
+?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>B.Tech First Year Courses</title>
 		<link rel="stylesheet" href="css/style_ta_webpages.css" type="text/css" media="screen" />
@@ -16,17 +24,16 @@
 
 <div id="container">  
     <ul id="nav">  
-        <li ><a href="ta_home.html" title="Your dashboard">Home</a></li>  
-     	<li class="active"><a href="ta_courses.html" >Courses</a>
-        <ul>
-		    <li><a href="ta_firstyear_courses.php">B.Tech First Year Courses</a></li>
-			<li><a href="ta_secondyear_courses.php">B.Tech Second Year Courses</a></li>
-			<li><a href="ta_thirdyear_courses.php">B.Tech Advanced Courses</a></li>
+        <li ><a href="ta_home.php" title="Your dashboard">Home</a></li>  
+     	<li class="active"><a href="ta_courses.php" >Courses</a>
+         <ul>
+			<li><a href="ta_check_courses.php">Select Courses</a></li>
+
         </ul>
         </li> 
-        <li><a href="ta_courses_availaibility.html" >Availaibility</a></li>  
-        <li><a href="ta_application_form.html" >Application</a></li>  
-        <li ><a href="ta_results.html" >Results</a></li>  
+        <li><a href="ta_courses_availaibility.php" >Availaibility</a></li>  
+<li><a href="ta_application.php" >Application</a></li>  
+        <li ><a href="ta_results.php" >Results</a></li>  
         
     </ul>  
 </div> 
@@ -36,7 +43,7 @@
 #search {
 	
 	float:right;
-	margin-right:100px;
+	margin-right:10px;
 }
 
 #search input[type="text"] {
@@ -65,33 +72,146 @@
 </style>
 
 <div id = "content_wrap1">   
- <a style="margin-left:223px; position:relative; top:-9.6em;z-index:1; " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
- 
-    
+<div style="float: right; position:relative; width: 25px; margin-right: 10px; top:-11.2em;z-index:1; text-decoration:none; border: 2px solid #fff;">
+ <a href="logout.php" title="Sign Out"> <img src="images/1351863022_exit.png"/> </a>
+ <div style = "float:left; position: relative; margin-left:-1180px; margin-top: 24px; line-height: 1; font: 24px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 130px; font-weight:normal; "><?php echo "$member_name"; ?>
+ </div>
+</div>
+
 <form method="get" action="/search" id="search">
-  <input name="q" type="text" size="40" placeholder="Search..." />
-  
-</form>
+<!--  <input name="q" type="text" size="40" placeholder="Search..." />
+--></form>
 
  
-   <div class="alert  alert-info" style=" font-weight:normal; margin-left: 150px; width:800px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
-  <button type="button" class="close" data-dismiss="alert" title="This page contains the list of BTech first year courses which are available in the current semester and you are free to apply for them.   "><i class="cus-information"></i></button>
-  B.Tech First Year Courses: 
+   <div class="alert  alert-info" style=" font-weight:normal; margin-left: 5px; width:800px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
+  <button type="button" class="close"  title="This page contains the list of all courses which are available in the current semester and you are free to apply for them.   "><i class="cus-information"></i></button>
+  Courses: 
 </div>
 
-<div id="middle_content1">
+
+<div id="middle_contenttable">
+
+<?php
+//$tbl_name="course_list";
+$ta_email_check=$_SESSION['email_ses'];
+
+$query1="SELECT * FROM temp2 where email='$ta_email_check'";
+$result1=mysql_query($query1);
+if($result1)
+		{
+			$row=mysql_fetch_assoc($result1);
+			$form=$row['form_submit'];
+if($form=='yes')
+{
+header("location:form_already_submitted.php");
+}
+else {
+$query="SELECT * FROM course_list";
+$result=mysql_query($query);
+
+$num=mysql_numrows($result);
+//$num=$num+1;
+//mysql_close();
+?>
+<form name= "form1" action="ta_check_choice.php" method="post" enctype="multipart/form-data">
+<table id="hor-zebra" summary="Employee Pay Sheet">
+<th>#</th>
+<th>Course#</th>
+<th>Course Name</th>
+<th>Level</th>
+<th>Instructor</th>
+<th>Email</th>
+<th>Course Details</th>
+<th>Work Expectations</th>
+<th>First</th>
+<th>Second</th>
+<th>Third</th>
+<th>No</th>
+</tr>
 
 
-<!--<button class="btn" type="submit"  id="save" ><i class="cus-add"></i>   Add Record</button>-->
-<?php include("read_display.php"); ?>
-<!--<img src="images/actions-delete.png" />-->
+
+</tr>
+
+<?php
+$i=0;
+$best="Best";
+$okay="Okay";
+$maybe="MayBe";
+while ($i < $num) {
+
+$f2=mysql_result($result,$i,"c_no");
+$f3=mysql_result($result,$i,"year");
+$f4=mysql_result($result,$i,"detail");
+$f5=mysql_result($result,$i,"expectations");
+//$course=$row['Course name'];
+$result45 = mysql_query("SELECT * FROM course_list where c_no='$f2'");  //to identify instructor course
+ //$course_name=             
+					$row45=mysql_fetch_assoc($result45);
+			$course_name=$row45['c_name'];
+			$instructor=$row45['instructor'];
+			$email=$row45['email'];
+
+
+$name1=$f2.$best ;
+
+//echo "$name1";
+$name2=$f2.$okay ;
+$name3=$f2.$maybe ;
+
+?>
+
+<tr>
+<td><?php echo $i+1; ?></td>
+<td><?php echo $f2; ?></td>
+
+<td><?php echo $course_name; ?></td>
+<td><?php echo $f3; ?></td>
+<td><?php echo $instructor; ?></td>
+<td><?php echo $email; ?></td>
+<td><?php echo $f4; ?></td>
+<td><?php echo $f5; ?></td>
+
+
+<td><input type='radio' name='<?php echo $f2 ?>' value="Best" /></td>
+
+<td><input type='radio' name='<?php echo $f2 ?>' value="Okay" /></td>
+
+
+<td><input type='radio' name='<?php echo $f2 ?>' value="MayBe" /></td>
+<td><input type='radio' name='<?php echo $f2 ?>' value="No" checked /></td>
+</tr>
+
+<?php
+$i++;
+}
+}
+}
+?>
+</table>
+<input style="visibility:hidden" name="<?php echo $name1 ?>" value="<?php echo $num; ?>" />
+<input style="visibility:hidden" name="num" value="<?php echo $num; ?>" />
+<input style="visibility:hidden" name="<?php echo $name2 ?>" value="<?php echo $num; ?>" />
+<input style="visibility:hidden" name="num" value="<?php echo $num; ?>" />
+<input style="visibility:hidden" name="<?php echo $name3 ?>" value="<?php echo $num; ?>" />
+<input style="visibility:hidden" name="num" value="<?php echo $num; ?>" />
+
 	</div>
+    
+    
+<div style="top: -33em; position:relative; margin-left: 880px; width: 300px; height: 30px;  ">
+<button id="submit" type="submit" class="btn" name="submit1" ><i class="cus-tick"></i> Save Choices</button>
+</div>
+</form>
 </div>
 
-   <div id="clockbox" style="line-height: 1;  position:relative; top:-55em;z-index:1; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
+
+  <div  style="float: right; position:relative; width: 505px; margin-right: 40px; top:-42.7em;z-index:1; text-decoration:none; border: 2px solid #fff; " >
+ 
+        <div id="clockbox" style=" font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
         
         
-<div id="lastvisited" style = "line-height: 1; position:relative; top:-53.5em; z-index:1; margin-right: -294px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 150px; color:  #3a87ad; float: right;">  
+<div id="lastvisited" style = " font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 200px; color:  #3a87ad; float: right;">  
 
 
 <script type = "text/javascript">
@@ -157,15 +277,15 @@ lastvisit.setCookie("visitc", wh, days);
 lastvisit.showmessage();
 
 </script>
-
+</div>
 </div>
 
 
     
         
 
-
-<div id="footer"><img  src="images/contactbanner.png" /></div>
+<!--
+<div id="footer"><img  src="images/contactbanner.png" /></div>-->
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript">
 tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
