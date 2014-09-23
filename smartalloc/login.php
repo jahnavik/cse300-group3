@@ -1,16 +1,6 @@
 <?php
-
-$host="localhost"; // Host name 
-$username="root"; // Mysql username 
-$password="test123"; // Mysql password 
-$db_name="smartalloc"; // Database name 
+include "connect.php";
 $tbl_name="login"; // Table name 
-
-
-// Connect to server and select database.
-mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
-mysql_select_db("$db_name")or die("cannot select DB");
-
 
 // username and password sent from form 
 $email=$_POST['email']; 
@@ -27,14 +17,12 @@ $result=mysql_query($sql);
 // Mysql_num_row is counting table row
 $count=mysql_num_rows($result);
 
-
-
-
 if (isset($_POST['email']) && isset($_POST['password'])) {
     
     if ($count==1) {    
         session_start();
 			$_SESSION['email_ses']=$email;
+			
 			//@diti $_SESSION['is_remember_me']=$email;
 		$sql1="SELECT view FROM $tbl_name WHERE email='$email' and password='$password'";
 		$result1=mysql_query($sql1);
