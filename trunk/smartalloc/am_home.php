@@ -1,3 +1,19 @@
+<?php
+include "connect.php";
+session_start();
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='vivek@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +25,6 @@
 <link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
-
 </head>
 
 
@@ -19,129 +34,114 @@
 
 <div id="container">  
     <ul id="nav">  
-        <li class="active"><a href="am_home.php" title="Your dashboard">Home</a></li>  
-        <li><a href="am_teachingassistants.php" title="More info on TAs">Teaching Assistants</a></li>  
-        <li><a href="am_courseinfo.php" title="More info on courses">Course Info</a></li>  
-        <li><a href="am_timetable.php" title="Semester Timetable">Time Table</a></li>  
-        
-    </ul>  
+        <li class="active"><a href="am_home.php" >Home</a></li>  
+        <li><a href="am_teachingassistants.php" >Teaching Assistants</a></li>  
+        <li><a href="am_courseinfo.php">Course Info</a></li>  
+        <li><a href="am_timetable.php">Time Table</a></li>  
+     </ul>  
 </div>  
 
 <div id = "content_wrap">
- <a style="margin-left:130px; position:relative; top:-9em;z-index:1; " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
- 	
+<div style="float: right; position:relative; width: 25px; margin-right: 10px; top:-9.4em;z-index:1; text-decoration:none; border: 2px solid #fff;">
+ <a href="logout.php" title="Sign Out"> <img src="images/1351863022_exit.png"/> </a>
+</div>
+
 <div id="left_content">
   <div id="wrapper">
-     
-        <div class="slider-wrapper theme-default">
+     <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider">
                 <img src="images/initiate.jpg" data-thumb="images/initiate.jpg" alt="" title="Start the process..."  />
-                <img src="images/work.jpg" data-thumb="images/work.jpg" alt="" title="Be a smart worker..." /></a>
-                <img src="images/coments.jpg" data-thumb="images/coments.jpg" alt="" data-transition="slideInLeft" title="Post everything..."  />
-                <img src="images/pages.jpg" data-thumb="images/pages.jpg" alt="" title="No more paper work..." />
-            </div>
-           
-        </div>
-
-    </div>
-    
+                <img src="images/work.jpg" data-thumb="images/work.jpg" alt="" title="Be a smart worker..." />
+                <img src="images/coments.jpg" data-thumb="images/coments.jpg" alt="" title="Post everything..."  />
+          	</div>
+		</div>
+	</div>
 </div>
 
-
-
-
-
-		
-        <div id="clockbox" style="line-height: 1;  position:relative; top:-15em;z-index:1; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
-
-
-<div id="lastvisited" style = "line-height: 1; position:relative; top:-15em;z-index:5; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 200px; color:  #3a87ad; float: right;">  
- <script type = "text/javascript">
-
-
-var days = 730; // days until cookie expires = 2 years.
-var lastvisit=new Object();
-var firstvisitmsg="This is your first visit to this page. Welcome!"; 
-lastvisit.subsequentvisitmsg=" Your last visit was on: [displaydate]";
-
-lastvisit.getCookie=function(Name){ 
-var re=new RegExp(Name+"=[^;]+", "i"); 
-if (document.cookie.match(re)) 
-return document.cookie.match(re)[0].split("=")[1];
-return''; 
-}
-
-lastvisit.setCookie=function(name, value, days){ 
-var expireDate = new Date();
-
-var expstring=expireDate.setDate(expireDate.getDate()+parseInt(days));
-document.cookie = name+"="+value+"; expires="+expireDate.toGMTString()+"; path=/";
-}
-
-lastvisit.showmessage = function() {
-var wh = new Date();
-if (lastvisit.getCookie("visitc") == "") { 
-lastvisit.setCookie("visitc", wh, days); 
-document.write(firstvisitmsg);
-}
-
-else {
-var lv = lastvisit.getCookie("visitc");
-var lvp = Date.parse(lv);
-var now = new Date();
-now.setTime(lvp);
-var day=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-var month=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-var dd = now.getDate();
-var dy = now.getDay();
-dy = day[dy];
-var mn = now.getMonth();
-mn = month[mn];
-yy = now.getFullYear();
-var hh = now.getHours();
-var ampm = "AM";
-if (hh >= 12) {ampm = "PM"}
-if (hh >12){hh = hh - 12};
-if (hh == 0) {hh = 12}
-if (hh < 10) {hh = "" + hh};
-var mins = now.getMinutes();
-if (mins < 10) {mins = "0"+ mins}
-var secs = now.getSeconds();
-if (secs < 10) {secs = "0" + secs}
-var dispDate = dy + ", " + mn + " " + dd + ", " + yy + " " + hh + ":" + mins + ":" + secs + " " + ampm
-document.write(lastvisit.subsequentvisitmsg.replace("\[displaydate\]", dispDate))
-}
-
-lastvisit.setCookie("visitc", wh, days);
-
-}
-
-lastvisit.showmessage();
-
-</script>
-
-
-
-
-</div>
 
 <div id="right_content">
+	<div id="clockbox" style="line-height: 1;  position:relative; z-index:1;  font: 13px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 100px; color:  #3a87ad; float: right;">
+    </div>
+
+	<div id="lastvisited" style = "line-height: 1; position:relative; z-index:5; font: 13px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 100px; color:  #3a87ad; float: right;">  
+ 
+	<script type = "text/javascript">
+		var days = 730; // days until cookie expires = 2 years.
+		var lastvisit=new Object();
+		var firstvisitmsg="This is your first visit to this page. Welcome!"; 
+		lastvisit.subsequentvisitmsg=" Your last visit was on: [displaydate]";
+
+		lastvisit.getCookie=function(Name){ 
+		var re=new RegExp(Name+"=[^;]+", "i"); 
+		if (document.cookie.match(re)) 
+		return document.cookie.match(re)[0].split("=")[1];
+		return''; 
+		}
+
+		lastvisit.setCookie=function(name, value, days){ 
+		var expireDate = new Date();
+
+		var expstring=expireDate.setDate(expireDate.getDate()+parseInt(days));
+		document.cookie = name+"="+value+"; expires="+expireDate.toGMTString()+"; path=/";
+		}
+
+		lastvisit.showmessage = function() {
+		var wh = new Date();
+		if (lastvisit.getCookie("visitc") == "") { 
+		lastvisit.setCookie("visitc", wh, days); 
+		document.write(firstvisitmsg);
+		}
+
+		else {
+		var lv = lastvisit.getCookie("visitc");
+		var lvp = Date.parse(lv);
+		var now = new Date();
+		now.setTime(lvp);
+		var day=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+		var month=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+		var dd = now.getDate();
+		var dy = now.getDay();
+		dy = day[dy];
+		var mn = now.getMonth();
+		mn = month[mn];
+		yy = now.getFullYear();
+		var hh = now.getHours();
+		var ampm = "AM";
+		if (hh >= 12) {ampm = "PM"}
+		if (hh >12){hh = hh - 12};
+		if (hh == 0) {hh = 12}
+		if (hh < 10) {hh = "" + hh};
+		var mins = now.getMinutes();
+		if (mins < 10) {mins = "0"+ mins}
+		var secs = now.getSeconds();
+		if (secs < 10) {secs = "0" + secs}
+		var dispDate = dy + ", " + mn + " " + dd + ", " + yy + " " + hh + ":" + mins + ":" + secs + " " + ampm
+		document.write(lastvisit.subsequentvisitmsg.replace("\[displaydate\]", dispDate))
+		}
+
+		lastvisit.setCookie("visitc", wh, days);
+
+		}
+
+		lastvisit.showmessage();
+
+</script>
+</div>
 
 
-         <p style="color:black;margin-top:110px;margin-left:10px;font-size:40px;text-align:center;">Welcome!</p>
+	<div style="margin-right: 110px; margin-top: 70px; width: 400px; border: 2px solid #eee;">
+		<p style="color:black;margin-top:110px;margin-left:10px;font-size:40px;text-align:center;">Welcome!</p>
 		<p style="color: blue;;margin-top:20px;margin-left:10px;font-size:40px;text-align:center;">Mr. Vivek Tiwari</p>
-		<p style="line-height: 1; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;"></br></br>
+		<p style="line-height: 1; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 120px;"></br></br>
 			The <b>Teaching Assistants</b>, the <b>Course Info</b> and the <b>Time Table</b> tabs have been given for you to upload the list of TAs, the courses available and the time table for the current semester.
 		</p>	
 	</div>
-    
+</div>
+</div>
 </div>
 
-</div>
 
-
-<div id="footer">
-	<img  src="images/contactbanner.png" /></div>
+<div id="footer"><img  src="images/contactbanner.png" /></div>
 
 <script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>

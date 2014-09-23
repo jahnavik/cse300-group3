@@ -1,6 +1,19 @@
 <?php
+include "connect.php";
 session_start();
-$_SESSION["name"]="Admin";
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='vivek@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
+$_SESSION["name"]="AM";	
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +91,9 @@ function myFunction1()
 
 
 <div id = "content_wrap">
-<a style="margin-left:130px; position:relative; top:-9.6em;z-index:1; " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
+<div style="float: right; position:relative; width: 25px; margin-right: 10px; top:-10em;z-index:1; text-decoration:none; border: 2px solid #fff; " >
+ <a href="logout.php" title="Sign Out"> <img src="images/1351863022_exit.png"/> </a>
+ 	</div>
 
 <div id="left_content">
     <div class="alert  alert-info" style=" font-weight:normal;   line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
@@ -114,10 +129,12 @@ function myFunction1()
 
 </div>
 
-<div id="clockbox" style="line-height: 1;  position:relative; top:-52.5em;z-index:1; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
+<div  style="float: right; position:relative; width: 505px; margin-right: 40px; top:-41.5em;z-index:1; text-decoration:none; border: 2px solid #fff; " >
+ 
+        <div id="clockbox" style=" font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
         
         
-<div id="lastvisited" style = "line-height: 1; position:relative; top:-52.5em;z-index:5; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 200px; color:  #3a87ad; float: right;">  
+<div id="lastvisited" style = " font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 200px; color:  #3a87ad; float: right;">  
 
 
 <script type = "text/javascript">
@@ -184,6 +201,8 @@ lastvisit.showmessage();
 
 </script>
 </div>
+</div>
+
 <div id="footer"><img  src="images/contactbanner.png" /></div>
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript">
