@@ -1,9 +1,26 @@
+<?php
+include "connect.php";
+session_start();
+
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='astrid@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Teaching Assitants List</title>
-		<link rel="stylesheet" href="css/style_ad_list.css" type="text/css" />
+<title>Teaching Assistants</title>
+		<link rel="stylesheet" href="css/style_ad_list.css" type="text/css" media="screen" />
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Oswald' type='text/css' />
         <link rel="stylesheet" href="cus-icons.css" type="text/css"  />
     	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"  />
@@ -18,20 +35,24 @@
     <ul id="nav">  
         <li ><a href="admin_home.php">Home</a></li>  
         <li class="active"><a href="admin_teachingassistants.php">TAs</a></li>  
-        <li><a href="admin_courseinfo.php">Course Info</a></li>  
-        <li><a href="admin_updates.php">Course Updates</a></li>  
-        <li><a href="admin_ta_applications.php">TAship Applications</a></li>  
-        <li><a href="admin_ta_results.php">Results</a></li>  
+        <li ><a href="admin_courseinfo.php">Course Info</a></li>  
+        <li ><a href="admin_updates.php">Course Updates</a></li>  
+        <li><a href="admin_ta_applications.php">TA Applications</a></li> 
+ <li><a href="admin_deadlines.php">Deadlines</a></li>   
+        <li ><a href="admin_ta_conflicts.php">Conflicts</a></li>    
+            
+        <li><a href="admin_ta_results.php">Results</a></li  
         
-    </ul>  
+    ></ul>  
 </div> 
+
+
 	<style>
-	
 	
 #search {
 	
 	float:right;
-	margin-right:100px;
+	margin-right:10px;
 }
 
 #search input[type="text"] {
@@ -59,38 +80,187 @@
     }
 </style>
 
+
 <div id = "content_wrap">   
- <a style="margin-left:173px; position:relative; top:-9.6em;z-index:1; " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
- 
+ <div style="float: right; position:relative; width: 25px; margin-right: 10px; top:-11.2em;z-index:1; text-decoration:none; border: 2px solid #fff; " >
+ <a href="logout.php" title="Sign Out"> <img src="images/1351863022_exit.png"/> </a>
+ 	</div>
  
 
 <form method="get" action="/search" id="search">
-  <input name="q" type="text" size="40" placeholder="Search..." />
-  
+<!--  <input name="q" type="text" size="40" placeholder="Search..." />
+  -->
 </form>
 
-   <div class="alert  alert-info" style=" font-weight:normal; margin-left: 150px; width:800px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
-  <button type="button" class="close" data-dismiss="alert" title="This page contains the list of this semester's teaching assistants for your review. "><i class="cus-information"></i></button>
- Teaching Assistants for the current semester: 
+
+   <div class="alert  alert-info" style=" font-weight:normal; margin-left: 5px; width:800px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 100px;">
+   
+  <button type="button" class="close" title="This page contains the list of all the teaching assistants of the current semester for your review. "><i class="cus-information"></i></button>
+Teaching Assistants of the current semester:  
 </div>
 
 
 
+<div id="middle_contenttable">
 
-<div id="middle_content">
+<?php
+include "connect.php";
+$tbl_name="ta_list";
+$query="SELECT * FROM $tbl_name";
+$result=mysql_query($query);
+$num=mysql_numrows($result);
+//$num=$num+1;
 
+if($num==0)
+{
+?>
+<div class="alert  alert-danger" style=" font-weight:normal; width:600px;line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
+<button type="button" class="close" ><i class="cus-error"></i></button>
+ <?php
+echo"No updates yet!";
+echo "</div>";
+}
+else {
+?>
+
+<form name="form" action="admin_ta_modify.php" method="post" enctype="multipart/form-data">
+<table id="hor-zebra" summary="Datapass">
+<th>#</th>
+<th>Name</th>
+<th>Programme</th>
+<th>Batch</th>
+<th>Email</th>
+<th>Contact</th>
+<th>Action</th>
+</tr>
+
+<?php
+$i=0;
+
+while ($i<$num) {
+$modale="modale";
+$modald="modald";
+$f1=mysql_result($result,$i,"id");
+$f2=mysql_result($result,$i,"name");
+$f3=mysql_result($result,$i,"programme");
+$f4=mysql_result($result,$i,"batch");
+$f5=mysql_result($result,$i,"email");
+$f6=mysql_result($result,$i,"contact");
+$modale=$modale.$f1;
+$modald=$modald.$f1;
+?>
+
+<tr>
+<td><?php echo $i+1; ?></td>
+<td><?php echo $f2; ?></td>
+<td><?php echo $f3; ?></td>
+<td><?php echo $f4; ?></td>
+<td><?php echo $f5; ?></td>
+<td><?php echo $f6; ?></td>
+
+<td><a href="#<?php echo $modale; ?>" data-toggle="modal"><img src='images/actions-edit.png'/></a>
+<a href="#<?php echo $modald; ?>" data-toggle="modal"><img src='images/actions-delete.png'/></a></td> 
+<!--<a href="#myModal" role="button" class="btn" data-toggle="modal">Launch Modal</a>
+-->
+ <div class="modal hide" id="<?php echo $modale; ?>" tabindex="-1" role="dialog" aria-labelledby="myModelLabel" aria-hidden="true">
+		<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Edit Record</h3>
+        </div>
+        <form action="admin_ta_modify.php" method="POST" enctype="multipart/form-data">
+		<div class="modal-body">
+            <label>Name</label>
+            <input type="text" name="e2" class="span4" value="<?php echo $f2; ?>"/><br>
+            <label>Programme</label>
+    		<input type="text" name="e3" class="span4" value="<?php echo $f3; ?>"/><br>
+            <label>Batch</label>
+    		<input type="text" name="e4" class="span4" value="<?php echo $f4; ?>"/><br>
+            <label>Email</label>
+    		<input type="text" name="e5" class="span4" value="<?php echo $f5; ?>"/><br>
+            <label>Contact</label>
+    		<input type="text" name="e6" class="span4" value="<?php echo $f6; ?>"/><br>
+            <input type="hidden" name="e1" value="<?php echo $f1; ?>">
+		</div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" name="edit" >Save</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>   	
+        </div>  
+       </form>
+</div>
+
+ <div class="modal hide" id="<?php echo $modald; ?>" tabindex="-1" role="dialog" aria-labelledby="myModelLabel" aria-hidden="true">
+		<div class="modal-footer">
+        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 style="text-align:left; font-style:normal; font-weight:lighter; font:'Palatino Linotype', 'Book Antiqua', Palatino, serif;">Are you sure you want to delete <b><?php echo $f2; ?></b>?</h4>
+       <!-- </div>-->
+        <form action="admin_ta_delete.php" method="POST" enctype="multipart/form-data">
+		<!--<div class="modal-body">-->
+            <input type="hidden" name="d1" value="<?php echo $f1; ?>">
+		<!--</div>-->
+        <!--<div class="modal-footer">-->
+        <center>
+        <button type="submit" class="btn btn-primary" name="delete" >Yes</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>   	
+        </center>
+        </div>
+       </form>
+</div>
+</tr>
+
+
+<?php
+$i++;
+}
+}
+?>
+</table>
+</form>
+
+</div>
+ <button class="btn" data-toggle="modal" data-target="#myModal" type="submit" title="Add a new record" id="save" style="position: relative; top: -38em; margin-left: 900px;" ><i class="cus-add"></i>   Add Record</button>
+ 
+	<div class="modal hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModelLabel" aria-hidden="true">
+		<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Add a New Record</h3>
+        </div>
+        <form action="admin_ta_create.php" method="POST" enctype="multipart/form-data">
+		<div class="modal-body">
+            <label>Name</label>
+            <input type="text" name="i2" class="span4"/><br>
+            <label>Programme</label>
+    		<input type="text" name="i3" class="span4"/><br>
+            <label>Batch</label>
+    		<input type="text" name="i4" class="span4"/><br>
+            <label>Email</label>
+    		<input type="text" name="i5" class="span4"/><br>
+            <label>Contact</label>
+    		<input type="text" name="i6" class="span4"/><br>
+		</div>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" name="add" >Add</button>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>   	
+        </div>  
+	</div>   
+       </form>
+       </div>
+</div>
 
 <!--<button class="btn" type="submit"  id="save" ><i class="cus-add"></i>   Add Record</button>-->
-<?php include("admin_ta_read_display.php"); ?>
+
 <!--<img src="images/actions-delete.png" />-->
-	</div>
+
+  
     
-    </div>
-    
-    <div id="clockbox" style="line-height: 1;  position:relative; top:-55em;z-index:1; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
+
+   
+   
+  <div  style="float: right; position:relative; width: 505px; margin-right: 40px; top:-42.9em;z-index:1; text-decoration:none; border: 2px solid #fff; " >
+ 
+        <div id="clockbox" style=" font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
         
         
-<div id="lastvisited" style = "line-height: 1; position:relative; top:-53.5em; z-index:1; margin-right: -305px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 150px; color:  #3a87ad; float: right;">  
+<div id="lastvisited" style = " font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 200px; color:  #3a87ad; float: right;">  
 
 
 <script type = "text/javascript">
@@ -156,7 +326,7 @@ lastvisit.setCookie("visitc", wh, days);
 lastvisit.showmessage();
 
 </script>
-
+</div>
 </div>
 
 
@@ -164,7 +334,8 @@ lastvisit.showmessage();
         
 
 
-<div id="footer"><img  src="images/contactbanner.png" /></div>
+<!--<div id="footer"><img  src="images/contactbanner.png" /></div>
+-->
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript">
 tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");

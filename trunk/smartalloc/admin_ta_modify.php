@@ -1,34 +1,22 @@
 <?php
 
-$connect = mysql_connect("localhost","root","test123");
-mysql_select_db("smartalloc");
+include "connect.php";
+/*$name = $_POST['e2'];
+$prog = $_POST['e3'];
+$batch = $_POST['e4'];
+$email = $_POST['e5'];
+$contact = $_POST['e6'];*/
 
-if(!isset($_POST['submit']))
+if(!isset($_POST['edit']))
 {
-	$query = mysql_query("SELECT * FROM ta_list WHERE id = $_GET[id]");
-	$row = mysql_fetch_array($query);
+	echo "Please Fill the form";
+	header("Location: admin_teachingassistants.php");	
 }
-?>
-
-<h1> Edit Record <h1>
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-    Name <input type="text" name="i2" value="<?php echo $row['name']; ?>"><br>
-    Prog <input type="text" name="i3" value="<?php echo $row['programme']; ?>"><br>
-    Batch <input type="text" name="i4" value="<?php echo $row['batch']; ?>"><br>
-    Email <input type="text" name="i5" value="<?php echo $row['email']; ?>"><br>
-    Contact <input type="text" name="i6" value="<?php echo $row['contact']; ?>"><br>
-    <input type="hidden" name="i1" value="<?php echo $_GET['id']; ?>">
-    <input type="submit" name="submit1" value="Edit" />
-</form>
-
-<?php
-//connect to the server
-$connect = mysql_connect("localhost","root","test123");
-//connect to the data base
-mysql_select_db("smartalloc");
-if(isset($_POST['submit1']))
+else
 {
-mysql_query("UPDATE ta_list SET name='$_POST[i2]', programme='$_POST[i3]', batch='$_POST[i4]', email='$_POST[i5]', contact='$_POST[i6]' WHERE id = $_POST[i1]");
-header("location:admin_teachingassistants.php");
+//	echo "WE ARE HERE!!!!";
+	mysql_query("UPDATE ta_list SET name='$_POST[e2]', programme='$_POST[e3]', batch='$_POST[e4]', email='$_POST[e5]', contact='$_POST[e6]' WHERE id = $_POST[e1]");
+//	echo "Added!";
+	header("Location: admin_teachingassistants.php");
 }
 ?>

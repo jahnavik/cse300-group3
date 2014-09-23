@@ -1,7 +1,18 @@
 <?php
-    // Make a MySQL Connection
-    mysql_connect("localhost", "root", "test123") or die(mysql_error());
-    mysql_select_db("smartalloc") or die(mysql_error());
+include "connect.php";
+session_start();
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='astrid@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
 
     // Get all the data from the "årgang" table
     $result = mysql_query("SELECT * FROM course_list") 
@@ -14,8 +25,8 @@ $i=0;
         <th scope="col">Course No.</th> 
         <th scope="col">Course Name</th> 
         <th scope="col">Instructor(s)</th> 
-		<th scope="col">Enrollment Size</th> 
-        <th scope="col">TAs Required</th> 
+		<th scope="col">Enrol Size</th> 
+        <th scope="col">TAs Reqd.</th> 
 		<th scope="col">Email</th> 
 		<th scope="col">Contact</th>
 		<th scope="col">Actions</th>
