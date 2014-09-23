@@ -1,7 +1,6 @@
 <?php
-    // Make a MySQL Connection
-    mysql_connect("localhost", "root", "test123") or die(mysql_error());
-    mysql_select_db("smartalloc") or die(mysql_error());
+
+include "connect.php";
 
     // Get all the data from the "årgang" table
     $result = mysql_query("SELECT * FROM ta_list") 

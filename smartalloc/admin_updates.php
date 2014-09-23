@@ -1,9 +1,33 @@
+<?php
+include "connect.php";
+session_start();
+if(!isset($_SESSION['email_ses']))
+{
+	header("Location: index.php");
+}
+else if(isset($_SESSION['email_ses']))
+{
+	$current_session=$_SESSION['email_ses'];
+	if($current_session!='astrid@iiitd.ac.in')
+	{
+		header("Location: unauthorized.html");
+	}		
+}
+
+$query="SELECT * FROM course_list";
+$result=mysql_query($query);
+
+$num=mysql_numrows($result);
+//$num=$num+1;
+//mysql_close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Course Updates</title>
-		<link rel="stylesheet" href="css/style_ad_list.css" type="text/css" />
+		<link rel="stylesheet" href="css/style_ad_list.css" type="text/css" media="screen" />
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Oswald' type='text/css' />
         <link rel="stylesheet" href="cus-icons.css" type="text/css"  />
     	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"  />
@@ -20,18 +44,22 @@
         <li ><a href="admin_teachingassistants.php">TAs</a></li>  
         <li ><a href="admin_courseinfo.php">Course Info</a></li>  
         <li class="active"><a href="admin_updates.php">Course Updates</a></li>  
-        <li><a href="admin_ta_applications.php">TAship Applications</a></li>  
-        <li><a href="admin_ta_results.php">Results</a></li>  
+        <li><a href="admin_ta_applications.php">TA Applications</a></li>
+       <li><a href="admin_deadlines.php">Deadlines</a></li>   
+        <li ><a href="admin_ta_conflicts.php">Conflicts</a></li>    
+           
+        <li><a href="admin_ta_results.php">Results</a></li  
         
-    </ul>  
+    ></ul>  
 </div> 
+
+
 	<style>
-	
 	
 #search {
 	
 	float:right;
-	margin-right:100px;
+	margin-right:10px;
 }
 
 #search input[type="text"] {
@@ -59,38 +87,122 @@
     }
 </style>
 
+
 <div id = "content_wrap">   
- <a style="margin-left:173px; position:relative; top:-9.6em;z-index:1; " href="logout.php" title="Log Out."><img src="images/1351863022_exit.png"/> </a>
- 
+ <div style="float: right; position:relative; width: 25px; margin-right: 10px; top:-11.2em;z-index:1; text-decoration:none; border: 2px solid #fff; " >
+ <a href="logout.php" title="Sign Out"> <img src="images/1351863022_exit.png"/> </a>
+ 	</div>
  
 
 <form method="get" action="/search" id="search">
-  <input name="q" type="text" size="40" placeholder="Search..." />
+ <!-- <input name="q" type="text" size="40" placeholder="Search..." />-->
   
 </form>
 
-   <div class="alert  alert-info" style=" font-weight:normal; margin-left: 150px; width:800px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
-  <button type="button" class="close" data-dismiss="alert" title="This page contains the list of all the course updates made by their instructors. "><i class="cus-information"></i></button>
-Course Updates by Instructors: 
+
+   <div class="alert  alert-info" style=" font-weight:normal; margin-left: 5px; width:800px; line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 100px;">
+   
+  <button type="button" class="close" title="This page contains the list of all the course updates made by their instructors. "><i class="cus-information"></i></button>
+Course Updates by Instructors:  
 </div>
 
 
 
+<div id="middle_contenttable">
+<?php
+if($num==0)
+{
+	?>
+<div class="alert  alert-danger" style=" font-weight:normal; width:600px;line-height: 1; font: 20px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px;">
+<button type="button" class="close" ><i class="cus-error"></i></button>
+<?php
+echo"No Course Updates Yet!";
+echo "</div>";
+}
+else {
+?>
+<form name= "form1" action="ta_check_choice.php" method="post" enctype="multipart/form-data">
+<table id="hor-zebra" summary="Employee Pay Sheet">
+<tr>
+<th>#</th>
+<th>Course#</th>
+<th>Name</th>
+<th>Level</th>
+<th>Enrol Size</th>
+<th>TAs (Policy)</th>
+<th>TAs Reqd</th>
+<th>Instructor(s)</th>
+<th>Email</th>
+<th>Course Details</th>
+<th>Work Expected</th>
+</tr>
 
-<div id="middle_content">
 
 
-<!--<button class="btn" type="submit"  id="save" ><i class="cus-add"></i>   Add Record</button>-->
-<?php include("read_display.php"); ?>
-<!--<img src="images/actions-delete.png" />-->
+
+<?php
+$i=0;
+$best="Best";
+$okay="Okay";
+$maybe="MayBe";
+while ($i < $num) {
+
+$f2=mysql_result($result,$i,"c_no");
+//echo"$f2";
+$f3=mysql_result($result,$i,"year");
+//echo"$f3";
+$f4=mysql_result($result,$i,"detail");
+$f5=mysql_result($result,$i,"expectations");
+$f6=mysql_result($result,$i,"c_name");
+$f7=mysql_result($result,$i,"enrol_size");
+$ta=round($f7/20);
+$f8=mysql_result($result,$i,"ta_demand");
+$f9=mysql_result($result,$i,"instructor");
+$f11=mysql_result($result,$i,"email");
+$f10=mysql_result($result,$i,"contact");
+//$course=$row['Course name'];
+
+
+$name1=$f2.$best ;
+
+//echo "$name1";
+$name2=$f2.$okay ;
+$name3=$f2.$maybe ;
+?>
+<tr>
+<td><?php echo $i+1; ?></td>
+<td><?php echo $f2; ?></td>
+<td><?php echo $f6; ?></td>
+<td><?php echo $f3; ?></td>
+<td><?php echo $f7; ?></td>
+<td><?php echo $ta; ?></td>
+<td><?php echo $f8; ?></td>
+
+<td><?php echo $f9; ?></td>
+<td><?php echo $f11; ?></td>
+<td><?php echo $f4; ?></td>
+<td><?php echo $f5; ?></td>
+</tr>
+<?php
+$i++;
+}
+}
+?>
+</form>  
+  </table>
+    </div>
+   
 	</div>
     
-    </div>
-    
-    <div id="clockbox" style="line-height: 1;  position:relative; top:-55em;z-index:1; margin-right: 50px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
+
+   
+   
+  <div  style="float: right; position:relative; width: 505px; margin-right: 40px; top:-42.9em;z-index:1; text-decoration:none; border: 2px solid #fff; " >
+ 
+        <div id="clockbox" style=" font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 90px; color:  #3a87ad; float: right;"></div>
         
         
-<div id="lastvisited" style = "line-height: 1; position:relative; top:-53.5em; z-index:1; margin-right: -305px; font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 150px; color:  #3a87ad; float: right;">  
+<div id="lastvisited" style = " font: 12px/1.5em Verdana, Geneva, Arial, Helvetica, sans-serif; min-width: 200px; color:  #3a87ad; float: right;">  
 
 
 <script type = "text/javascript">
@@ -156,15 +268,15 @@ lastvisit.setCookie("visitc", wh, days);
 lastvisit.showmessage();
 
 </script>
-
+</div>
 </div>
 
 
     
         
 
-
-<div id="footer"><img  src="images/contactbanner.png" /></div>
+<!--
+<div id="footer"><img  src="images/contactbanner.png" /></div>-->
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript">
 tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
